@@ -1,0 +1,585 @@
+/* =========================
+   DASAR HALAMAN
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --krem: #f5f1e8;
+    --kuning: #ffdf00;
+    --hitam: #171717;
+    --putih: #fffdf8;
+    --biru: #2475f5;
+    --pink: #f20b58;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding-bottom: 110px;
+    font-family: Arial, sans-serif;
+    color: var(--hitam);
+    background: var(--krem);
+}
+
+/* =========================
+   HEADER BRAND
+   Mengikuti halaman Grafik
+========================= */
+
+.header-grafik {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px max(5%, calc((100% - 1000px) / 2));
+    border-bottom: 2px solid var(--hitam);
+    background: var(--putih);
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--hitam);
+    background: var(--kuning);
+    font-size: 20px;
+}
+
+.header-grafik h1 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.header-grafik p {
+    margin: 3px 0 0;
+    font-size: 11px;
+}
+
+/* =========================
+   KONTEN UTAMA
+   Lebar mengikuti halaman Grafik
+========================= */
+
+.konten-pemasukan {
+    width: 92%;
+    max-width: 1000px;
+    margin: 18px auto 35px;
+}
+
+.kembali {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--hitam);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.kembali:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   HEADER PEMASUKAN
+========================= */
+
+.pemasukan {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    min-height: 60px;
+    margin: 0 0 16px;
+    padding: 12px 18px;
+
+    border: 2px solid var(--hitam);
+    border-radius: 0;
+    background: var(--cyan, #00d1ff);
+    color: #f9fbfc;
+
+    box-shadow: 4px 4px 0 var(--hitam);
+
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(17px, 2vw, 24px);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.25;
+    text-transform: uppercase;
+    transform: none;
+}
+
+.ikon-pemasukan {
+    flex-shrink: 0;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+}
+
+/* =========================
+   KARTU FORM
+========================= */
+
+.conten {
+    width: 100%;
+    margin: 0;
+    padding: 18px;
+
+    border: 2px solid var(--hitam);
+    border-radius: 0;
+    background: #d8f9f9;
+    box-shadow: 4px 4px 0 var(--hitam);
+}
+
+.conten-isi {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 18px;
+
+    border: 2px solid var(--hitam);
+    border-radius: 8px;
+    background: var(--putih);
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Hilangkan style default UL */
+.conten-isi ul {
+    margin: 0 0 17px;
+    padding: 0;
+    list-style: none;
+}
+
+.conten-isi li {
+    margin: 0;
+    padding: 0;
+}
+
+.conten-isi label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* INPUT, SELECT, TANGGAL */
+.rupiah-2,
+#kategori,
+#keterangan,
+#input-tanggal-pemasukan {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 10px 11px;
+    
+    border: 2px solid var(--hitam);
+    border-radius: 0;
+    outline: none;
+    background: white;
+    color: var(--hitam);
+    
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.rupiah-2:focus,
+#kategori:focus,
+#keterangan:focus,
+#input-tanggal-pemasukan:focus,
+.form-tabungan input:focus,
+.form-tabungan select:focus {
+    border-color: var(--biru);
+    box-shadow: 0 0 0 2px #2475f530;
+}
+
+select option {
+    background: white;
+    color: var(--hitam);
+}
+
+/* =========================
+   TABUNGAN OPSIONAL
+========================= */
+
+.tabungan {
+    width: 100%;
+    margin: 20px 2px 16px;
+    padding: 0;
+}
+
+.toggle-tabungan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    margin : 0;
+
+    padding: 12px;
+    border: 2px solid var(--hitam);
+    border-radius: 6px;
+    background: white;
+    color: var(--hitam);
+
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+
+    box-shadow: 2px 3px var(--hitam);
+    transition: .15s ease;
+}
+
+.toggle-tabungan:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px var(--hitam);
+}
+
+.toggle-tabungan.active {
+    background: #48c9b0;
+    color: white;
+    border-color: var(--hitam);
+}
+
+.form-tabungan {
+    display: none;
+    margin-top: 12px;
+    padding: 18px;
+
+    border: 2px solid var(--hitam);
+    border-radius: 0;
+    background: #48c9b0;
+    box-shadow: 2px 3px var(--hitam);
+}
+
+.form-tabungan label {
+    display: block;
+    margin: 10px 0 7px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.form-tabungan input,
+.form-tabungan select {
+    display: block;
+    width: 100%;
+    min-height: 42px;
+    margin-bottom: 10px;
+    padding: 11px;
+
+    border: 2px solid var(--hitam);
+    border-radius: 0;
+    background: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.form-tabungan.popup-animation {
+    animation: smoothPopup .35s cubic-bezier(.175, .885, .32, 1.275) forwards;
+}
+
+@keyframes smoothPopup {
+    from {
+        opacity: 0;
+        transform: scale(.96) translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* =========================
+   TOMBOL SIMPAN
+========================= */
+
+#formPemasukan > .conten .tombol,
+.tombol {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin: 0;
+    padding: 13px;
+
+    border: 2px solid var(--hitam);
+    border-radius: 0;
+    background: var(--biru);
+    color: white;
+
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+
+    box-shadow: 3px 3px var(--hitam);
+    transition: .15s ease;
+}
+
+.tombol:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px var(--hitam);
+}
+
+.tombol:active {
+    transform: translate(3px, 3px);
+    box-shadow: none;
+}
+
+.tombol.berhasil {
+    background: #55d68a;
+    transform: scale(.98);
+}
+
+/* =========================
+   CUSTOM POPUP
+========================= */
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    background: rgba(0, 0, 0, .45);
+    opacity: 0;
+    visibility: hidden;
+    transition: .25s;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-box {
+    width: 100%;
+    max-width: 350px;
+    padding: 28px;
+
+    border: 3px solid var(--hitam);
+    border-radius: 16px;
+    background: white;
+    text-align: center;
+
+    box-shadow: 7px 7px var(--hitam);
+    transform: translateY(20px) scale(.95);
+    transition: .25s;
+}
+
+.popup-overlay.active .popup-box {
+    transform: translateY(0) scale(1);
+}
+
+.popup-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 66px;
+    height: 66px;
+    margin: 0 auto 15px;
+
+    border: 3px solid var(--hitam);
+    border-radius: 50%;
+    background: var(--kuning);
+    font-size: 32px;
+}
+
+.popup-box h2 {
+    margin: 10px 0;
+    font-size: 25px;
+    color: var(--hitam);
+}
+
+.popup-box p {
+    margin: 0 0 22px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#popupButton {
+    width: 100%;
+    padding: 13px;
+
+    border: 3px solid var(--hitam);
+    border-radius: 8px;
+    background: #ff3b6b;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 3px 3px var(--hitam);
+}
+
+#popupButton:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px var(--hitam);
+}
+
+#popupButton:active {
+    transform: translate(3px, 3px);
+    box-shadow: none;
+}
+
+/* =========================
+   NAVBAR
+   Menggunakan aturan yang sama
+   dengan navbar Grafik
+========================= */
+
+.bottom-nav-container2 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px;
+
+    border-top: 2px solid var(--hitam);
+    background: var(--krem);
+}
+
+.bottom-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+    max-width: 900px;
+    gap: 8px;
+    margin: 0;
+    padding: 8px;
+
+    list-style: none;
+    border: 3px solid var(--hitam);
+    border-radius: 24px;
+    background: var(--putih);
+    box-shadow: 4px 4px 0 var(--hitam);
+}
+
+.bottom-nav li {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    min-height: 48px;
+    padding: 5px 3px;
+    border-radius: 12px;
+
+    color: var(--hitam);
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+
+    transition: .15s ease;
+}
+
+.nav-link span {
+    font-size: 20px;
+}
+
+/* Hanya link yang aktif yang berwarna kuning */
+.nav-link:hover,
+.nav-link.aktif {
+    border: 2px solid var(--hitam);
+    background: var(--kuning);
+    box-shadow: 2px 2px 0 var(--hitam);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+    .konten-pemasukan {
+        width: 92%;
+        margin-top: 15px;
+    }
+
+    .pemasukan {
+        min-height: 52px;
+        padding: 10px 12px;
+        gap: 8px;
+        font-size: clamp(15px, 4vw, 21px);
+    }
+
+    .ikon-pemasukan {
+        font-size: 21px;
+    }
+
+    .conten {
+        padding: 12px;
+    }
+
+    .conten-isi {
+        padding: 13px;
+    }
+
+    .conten-isi ul {
+        margin-bottom: 14px;
+    }
+
+    .bottom-nav {
+        gap: 3px;
+        padding: 5px;
+    }
+
+    .nav-link {
+        gap: 3px;
+        min-height: 45px;
+        padding: 4px 1px;
+        font-size: 9px;
+    }
+
+    .nav-link span {
+        font-size: 18px;
+    }
+}
+
+
+/* IKON GAMBAR NAVBAR PEMASUKAN & PENGELUARAN */
+.bottom-nav .ikon-nav {
+    display: block;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto;
+    flex-shrink: 0;
+}

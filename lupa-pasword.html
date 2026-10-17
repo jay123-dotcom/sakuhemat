@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lupa Password - SakuHemat</title>
+
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <div class="logo">
+            🔐
+        </div>
+
+        <h1>SAKUHEMAT</h1>
+
+        <p class="subtitle">
+            Atur kembali password akunmu.
+        </p>
+
+
+        <div class="auth-box">
+
+            <h2>LUPA PASSWORD</h2>
+
+
+            <label for="email">
+                Email Akun
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Masukkan email akun"
+            >
+
+
+            <label for="passwordBaru">
+                Password Baru
+            </label>
+
+            <input
+                type="password"
+                id="passwordBaru"
+                placeholder="Buat password baru"
+            >
+
+
+            <div class="peringatan">
+
+                ⚠️ Masukkan email yang digunakan saat
+                membuat akun SakuHemat.
+
+            </div>
+
+
+            <button id="tombolReset">
+                RESET PASSWORD
+            </button>
+
+
+            <p class="switch-page">
+
+                Ingat password?
+
+                <a href="login.html">
+                    Kembali ke Login
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- POPUP -->
+
+    <div id="popupOverlay" class="popup-overlay">
+
+        <div class="popup">
+
+            <div id="popupIcon" class="popup-icon">
+                ⚠️
+            </div>
+
+            <h2 id="popupTitle">
+                Peringatan
+            </h2>
+
+            <p id="popupMessage">
+                Pesan
+            </p>
+
+            <button id="popupButton">
+                OKE
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="auth.js"></script>
+</body>
+
+</html>

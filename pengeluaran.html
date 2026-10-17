@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengeluaran | SakuHemat</title>
+
+    <link rel="stylesheet" href="pengeluaran.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER BRAND -->
+    <header class="header-grafik">
+        <div class="logo">💳</div>
+        <div>
+            <h1>SAKU HEMAT</h1>
+            <p>Catat Pengeluaranmu!</p>
+        </div>
+    </header>
+
+    <!-- KONTEN PENGELUARAN -->
+    <main class="konten-pemasukan">
+
+        <h1 class="pemasukan">
+            <span class="ikon-pemasukan">↘</span>
+            TAMBAH PENGELUARAN
+        </h1>
+
+        <form id="formPengeluaran">
+            <div class="conten">
+                <div class="conten-isi">
+
+                    <ul class="rupiah-1">
+                        <li>
+                            <label for="rupiah">JUMLAH (Rp)</label>
+                            <input
+                                class="rupiah-2"
+                                type="text"
+                                id="rupiah"
+                                inputmode="numeric"
+                                placeholder="Masukkan jumlah"
+                                autocomplete="off"
+                            >
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            <label for="kategori">KATEGORI</label>
+                            <select id="kategori">
+                                <option value="Makanan">Makanan</option>
+                                <option value="Minuman">Minuman</option>
+                                <option value="Game">Game</option>
+                                <option value="Kuota internet">Kuota internet</option>
+                                <option value="Transportasi">Transportasi</option>
+                                <option value="Keperluan sekolah">Keperluan sekolah</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            <label for="keterangan">KETERANGAN</label>
+                            <select id="keterangan">
+                                <option value="Jajan">Jajan</option>
+                                <option value="Belanja">Belanja</option>
+                                <option value="Keperluan sekolah">Keperluan sekolah</option>
+                                <option value="Alat tulis">Alat tulis</option>
+                                <option value="Hiburan">Hiburan</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </li>
+                    </ul>
+
+                    <ul id="tanggal-id">
+                        <li>
+                            <label for="input-tanggal-pemasukan" class="text-tanggal">
+                                TANGGAL
+                            </label>
+                            <input
+                                type="date"
+                                id="input-tanggal-pemasukan"
+                            >
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- OPSI TABUNGAN -->
+                <div class="tabungan" id="tabungan">
+
+                    <div
+                        class="toggle-tabungan"
+                        id="tombolTabungan"
+                        role="button"
+                        tabindex="0"
+                        aria-expanded="false"
+                        onclick="aktifkanTabungan()"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();aktifkanTabungan();}"
+                    >
+                        + SISIHKAN KE TABUNGAN (OPSIONAL)
+                    </div>
+
+                    <div class="form-tabungan" id="formFormulir">
+                        <label for="inputJumlah">Jumlah Ditabung (Rp)</label>
+                        <input
+                            type="text"
+                            id="inputJumlah"
+                            inputmode="numeric"
+                            placeholder="Masukkan jumlah"
+                            autocomplete="off"
+                        >
+
+                        <label for="selectTujuan">Tujuan Tabungan</label>
+                        <select id="selectTujuan">
+                            <option value="">— Pilih tujuan tabungan —</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button type="button" id="tombolSimpan" class="tombol">
+                    SIMPAN PENGELUARAN
+                </button>
+
+            </div>
+        </form>
+    </main>
+
+    <!-- CUSTOM POPUP -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-box">
+            <div class="popup-icon" id="popupIcon">⚠️</div>
+            <h2 id="popupTitle">Oops!</h2>
+            <p id="popupMessage">Pesan popup</p>
+            <button type="button" id="popupButton">OKE, MENGERTI</button>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="bottom-nav-container2">
+        <ul class="bottom-nav">
+
+            <li>
+                <a href="1.html" class="nav-link">
+                    <span>⌂</span>
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="Pemasukan.html" class="nav-link">
+                    <span>↗</span>
+                    Pemasukan
+                </a>
+            </li>
+
+            <li>
+                <a href="Pengeluaran.html" class="nav-link aktif" aria-current="page">
+                    <span>↘</span>
+                    Pengeluaran
+                </a>
+            </li>
+
+            <li>
+                <a href="saldo.html" class="nav-link">
+                    <span>◷</span>
+                    Saldo
+                </a>
+            </li>
+
+            <li>
+                <a href="grafik.html" class="nav-link">
+                    <span>▥</span>
+                    Grafik
+                </a>
+            </li>
+
+            <li>
+                <a href="tabungan.html" class="nav-link">
+                    <span>◎</span>
+                    Tabungan
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+
+    <script src="script.js"></script>
+    <script src="PENGELUARAN.js"></script>
+
+</body>
+</html>

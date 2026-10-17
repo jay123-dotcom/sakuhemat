@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saldo - SakuHemat</title>
+    <link rel="stylesheet" href="Saldo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header-grafik">
+        <div class="logo">💳</div>
+        <div>
+            <h1>SAKU HEMAT</h1>
+            <p>Catat dan pantau keuanganmu!</p>
+        </div>
+    </header>
+
+    <main class="konten-saldo">
+
+        <section class="saldo-card">
+            <div class="label">💳 &nbsp; SALDO SEKARANG</div>
+            <div class="saldo" id="saldoSekarang">Rp0</div>
+        </section>
+
+        <div class="pilih-bulan">
+            <label>📅 &nbsp; LIHAT DATA BULAN</label>
+            <button type="button" id="tombolPilihBulan" class="tombol-pilih-bulan">
+                OKTOBER 2026
+            </button>
+        </div>
+
+        <div id="popupBulan" class="popup-bulan">
+            <div class="popup-bulan-box">
+                <div class="popup-bulan-header">
+                    <h3 id="judulPopup">PILIH BULAN</h3>
+                    <button type="button" id="tutupPopupBulan" class="tutup-bulan">×</button>
+                </div>
+
+                <div class="tahun-pilih" id="bagianTahun">
+                    <button type="button" id="tahunSebelumnya">‹</button>
+                    <span id="tahunTerpilih">2026</span>
+                    <button type="button" id="tahunBerikutnya">›</button>
+                </div>
+
+                <div id="daftarBulan" class="daftar-bulan"></div>
+
+                <div id="kalenderTanggal" class="kalender-tanggal" hidden>
+                    <div class="kalender-header">
+                        <button type="button" id="kembaliBulan" class="tombol-kembali">‹ BULAN</button>
+                        <span id="bulanKalender"></span>
+                    </div>
+
+                    <div class="nama-hari">
+                        <span>MIN</span>
+                        <span>SEN</span>
+                        <span>SEL</span>
+                        <span>RAB</span>
+                        <span>KAM</span>
+                        <span>JUM</span>
+                        <span>SAB</span>
+                    </div>
+
+                    <div id="daftarTanggal" class="daftar-tanggal"></div>
+
+                    <p id="tanggalTerpilih" class="info-tanggal">
+                        Pilih tanggal, lalu tekan TERAPKAN TANGGAL.
+                    </p>
+
+                    <div class="aksi-kalender">
+                        <button type="button" id="resetTanggal" class="reset-tanggal">
+                            LIHAT SEMUA TANGGAL
+                        </button>
+                        <button type="button" id="terapkanTanggal" class="terapkan-tanggal">
+                            TERAPKAN TANGGAL
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="dua-card">
+            <div class="card pemasukan">
+                <div class="label">↗ &nbsp; PEMASUKAN</div>
+                <div class="jumlah" id="totalPemasukan">Rp0</div>
+            </div>
+
+            <div class="card pengeluaran">
+                <div class="label">↘ &nbsp; PENGELUARAN</div>
+                <div class="jumlah" id="totalPengeluaran">Rp0</div>
+            </div>
+        </section>
+
+        <section class="tabungan">
+            <div class="label">🏦 &nbsp; TOTAL TABUNGAN</div>
+            <div class="jumlah" id="totalTabungan">Rp0</div>
+        </section>
+
+        <section class="status">
+            <div class="label">⚡ &nbsp; STATUS KEUANGAN</div>
+            <div class="status-box belum-data">
+                <h2 id="statusKeuangan">BELUM ADA DATA</h2>
+                <p id="pesanStatus">Belum ada pemasukan pada bulan ini.</p>
+            </div>
+        </section>
+
+        <section class="tombol-area">
+            <a href="Pemasukan.html">
+                <button type="button" class="tombol-pemasukan">
+                    <span>+</span>
+                    TAMBAH PEMASUKAN
+                </button>
+            </a>
+
+            <a href="Pengeluaran.html">
+                <button type="button" class="tombol-pengeluaran">
+                    <span>+</span>
+                    TAMBAH PENGELUARAN
+                </button>
+            </a>
+        </section>
+
+    </main>
+
+    <nav class="bottom-nav-container2">
+        <ul class="bottom-nav">
+            <li>
+                <a href="1.html" class="nav-link">
+                    <span>⌂</span>
+                    Beranda
+                </a>
+            </li>
+            <li>
+                <a href="Pemasukan.html" class="nav-link">
+                    <span>↗</span>
+                    Pemasukan
+                </a>
+            </li>
+            <li>
+                <a href="Pengeluaran.html" class="nav-link">
+                    <span>↘</span>
+                    Pengeluaran
+                </a>
+            </li>
+            <li>
+                <a href="saldo.html" class="nav-link aktif" aria-current="page">
+                    <span>◷</span>
+                    Saldo
+                </a>
+            </li>
+            <li>
+                <a href="grafik.html" class="nav-link">
+                    <span>▥</span>
+                    Grafik
+                </a>
+            </li>
+            <li>
+                <a href="tabungan.html" class="nav-link">
+                    <span>◎</span>
+                    Tabungan
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="saldo.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,412 @@
+
+/* =========================
+   DASAR HALAMAN
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --krem: #f5f1e8;
+    --kuning: #ffdf00;
+    --hitam: #171717;
+    --putih: #fffdf8;
+    --biru: #2475f5;
+    --pink: #f20b58;
+}
+
+body {
+    min-height: 100vh;
+    padding-bottom: 110px;
+    font-family: Arial, sans-serif;
+    color: var(--hitam);
+    background: var(--krem);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header-grafik {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px max(5%, calc((100% - 1000px) / 2));
+    border-bottom: 2px solid var(--hitam);
+    background: var(--putih);
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--hitam);
+    background: var(--kuning);
+    font-size: 20px;
+}
+
+.header-grafik h1 {
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.header-grafik p {
+    margin-top: 3px;
+    font-size: 11px;
+}
+
+/* =========================
+   KONTEN
+========================= */
+
+.konten-grafik {
+    width: 90%;
+    max-width: 1000px;
+    margin: 24px auto;
+}
+
+.judul-halaman {
+    margin-bottom: 18px;
+    padding: 20px;
+    border: 3px solid var(--hitam);
+    background: var(--putih);
+    box-shadow: 5px 6px 0 var(--hitam);
+}
+
+.judul-halaman h2 {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.kartu-grafik {
+    margin-bottom: 22px;
+    padding: 20px;
+    border: 3px solid var(--hitam);
+    background: var(--putih);
+    box-shadow: 5px 6px 0 var(--hitam);
+}
+
+.kartu-grafik h3 {
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+/* =========================
+   PILIH BULAN
+========================= */
+
+.judul-kartu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.pilihan-periode {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pilihan-periode span {
+    font-size: 12px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.pilihan-periode button {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--hitam);
+    background: white;
+    font-size: 21px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 var(--hitam);
+}
+
+.pilihan-periode button:hover {
+    background: var(--kuning);
+}
+
+/* =========================
+   PIE CHART
+========================= */
+
+.pie-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+    padding: 20px 0;
+}
+
+.pie-chart {
+    display: grid;
+    place-items: center;
+    width: 210px;
+    height: 210px;
+    flex-shrink: 0;
+    border: 3px solid var(--hitam);
+    border-radius: 50%;
+    background: #e8e8e8;
+    box-shadow: 2px 3px 0 var(--hitam);
+    transition: background 0.2s ease;
+}
+
+.pie-tengah {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--hitam);
+    border-radius: 50%;
+    background: var(--putih);
+    text-align: center;
+}
+
+.pie-tengah span {
+    margin-bottom: 5px;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.pie-tengah strong {
+    max-width: 90px;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.pesan-kosong {
+    padding: 12px;
+    color: #555;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* =========================
+   DAFTAR KATEGORI
+========================= */
+
+.daftar-kategori {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.item-kategori {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px;
+    border: 2px solid var(--hitam);
+    background: var(--kuning);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.kategori-kiri {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+}
+
+.warna-kategori {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    border: 1px solid var(--hitam);
+}
+
+.nama-kategori {
+    overflow-wrap: anywhere;
+}
+
+.nominal-kategori {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.persen-kategori {
+    display: block;
+    margin-top: 3px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* =========================
+   GRAFIK BATANG
+========================= */
+
+.kartu-batang h3 {
+    margin-bottom: 14px;
+}
+
+.legenda {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 8px 0 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.legenda span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legenda i {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+
+.warna-pemasukan {
+    background: var(--biru);
+}
+
+.warna-pengeluaran {
+    background: var(--pink);
+}
+
+.grafik-batang-area {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+#grafikBatang {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.bottom-nav-container2 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px;
+    border-top: 2px solid var(--hitam);
+    background: var(--krem);
+}
+
+.bottom-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 900px;
+    gap: 8px;
+    padding: 8px;
+    list-style: none;
+    border: 3px solid var(--hitam);
+    border-radius: 24px;
+    background: var(--putih);
+    box-shadow: 4px 4px 0 var(--hitam);
+}
+
+.bottom-nav li {
+    flex: 1;
+    min-width: 0;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 48px;
+    padding: 5px 3px;
+    border-radius: 12px;
+    color: var(--hitam);
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.15s ease;
+}
+
+.nav-link span {
+    font-size: 20px;
+}
+
+.nav-link:hover,
+.nav-link.aktif {
+    border: 2px solid var(--hitam);
+    background: var(--kuning);
+    box-shadow: 2px 2px 0 var(--hitam);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+    .konten-grafik {
+        width: 92%;
+        margin-top: 18px;
+    }
+
+    .kartu-grafik {
+        padding: 14px;
+    }
+
+    .judul-kartu {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .pie-area {
+        min-height: 230px;
+    }
+
+    .pie-chart {
+        width: 185px;
+        height: 185px;
+    }
+
+    .grafik-batang-area {
+        height: 250px;
+    }
+
+    .item-kategori {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .bottom-nav {
+        gap: 3px;
+        padding: 5px;
+    }
+
+    .nav-link {
+        font-size: 9px;
+    }
+
+    .nav-link span {
+        font-size: 18px;
+    }
+}

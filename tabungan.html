@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabungan - SakuHemat</title>
+    <link rel="stylesheet" href="tabungan.css">
+</head>
+
+<body>
+
+    <!-- HEADER SAKUHEMAT - SAMA SEPERTI GRAFIK -->
+    <header class="header-grafik">
+        <div class="logo">💳</div>
+        <div class="header-text">
+            <h1>SAKU HEMAT</h1>
+            <p>Level Up Tabunganmu!</p>
+        </div>
+    </header>
+
+    <!-- JUDUL TABUNGAN -->
+    <section class="judul">
+        <h2>🔗 TABUNGAN</h2>
+    </section>
+
+    <!-- TOMBOL BUAT TUJUAN -->
+    <button id="tombolTujuan" class="tombol-buka">
+        ＋ BUAT TUJUAN BARU
+    </button>
+
+    <!-- FORM TUJUAN -->
+    <div id="formTujuan" class="form-container">
+        <label>NAMA TUJUAN</label>
+        <input
+            type="text"
+            id="namaTujuan"
+            placeholder="Misalnya: Beli Sepatu Baru"
+        >
+
+        <label>TARGET (Rp)</label>
+        <input
+            type="text"
+            id="targetTabungan"
+            placeholder="Rp 0"
+        >
+
+        <button id="simpanTujuan" class="tombol-simpan">
+            SIMPAN TUJUAN
+        </button>
+    </div>
+
+    <!-- DAFTAR TUJUAN -->
+    <main id="daftarTabungan"></main>
+
+    <!-- POPUP -->
+    <div id="popup" class="popup">
+        <div class="popup-box">
+            <div id="popupIcon">⚠️</div>
+            <h3 id="popupJudul">Informasi</h3>
+            <p id="popupPesan">Pesan</p>
+            <button id="popupButton">OKE</button>
+        </div>
+    </div>
+
+    <!-- NAVBAR BAWAH - SAMA SEPERTI GRAFIK -->
+    <div class="bottom-nav-container2">
+        <ul class="bottom-nav">
+
+            <li>
+                <a href="1.html" class="nav-link">
+                    <span>⌂</span>
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="pemasukan.html" class="nav-link">
+                    <span>↗</span>
+                    Pemasukan
+                </a>
+            </li>
+
+            <li>
+                <a href="pengeluaran.html" class="nav-link">
+                    <span>↘</span>
+                    Pengeluaran
+                </a>
+            </li>
+
+            <li>
+                <a href="saldo.html" class="nav-link">
+                    <span>◷</span>
+                    Saldo
+                </a>
+            </li>
+
+            <li>
+                <a href="grafik.html" class="nav-link">
+                    <span>▥</span>
+                    Grafik
+                </a>
+            </li>
+
+            <li>
+                <a href="tabungan.html" class="nav-link aktif">
+                    <span>◎</span>
+                    Tabungan
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <script src="TABUNGAN.js"></script>
+
+</body>
+</html>

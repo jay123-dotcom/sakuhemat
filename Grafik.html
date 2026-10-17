@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafik - SakuHemat</title>
+    <link rel="stylesheet" href="grafik.css">
+</head>
+<body>
+
+    <header class="header-grafik">
+        <div class="logo">💳</div>
+        <div>
+            <h1>SAKU HEMAT</h1>
+            <p>Level Up Tabunganmu!</p>
+        </div>
+    </header>
+
+    <main class="konten-grafik">
+
+        <section class="judul-halaman">
+            <h2>📊 &nbsp; GRAFIK</h2>
+        </section>
+
+        <!-- GRAFIK 1: PIE CHART -->
+        <section class="kartu-grafik">
+            <div class="judul-kartu">
+                <h3>PENGELUARAN PER KATEGORI</h3>
+
+                <div class="pilihan-periode">
+                    <button id="bulanSebelumnya" type="button" aria-label="Bulan sebelumnya">‹</button>
+                    <span id="labelBulan">OKTOBER 2026</span>
+                    <button id="bulanBerikutnya" type="button" aria-label="Bulan berikutnya">›</button>
+                </div>
+            </div>
+
+            <div class="pie-area">
+                <div class="pie-chart" id="pieChart">
+                    <div class="pie-tengah">
+                        <span>TOTAL</span>
+                        <strong id="totalPie">Rp0</strong>
+                    </div>
+                </div>
+                <p id="pesanPie" class="pesan-kosong" hidden>
+                    Belum ada pengeluaran pada bulan ini.
+                </p>
+            </div>
+
+            <div id="daftarKategori" class="daftar-kategori"></div>
+        </section>
+
+        <!-- GRAFIK 2: BAR CHART -->
+        <section class="kartu-grafik kartu-batang">
+            <h3>PEMASUKAN VS PENGELUARAN (6 BULAN)</h3>
+
+            <div class="legenda">
+                <span><i class="warna-pemasukan"></i> Pemasukan</span>
+                <span><i class="warna-pengeluaran"></i> Pengeluaran</span>
+            </div>
+
+            <div class="grafik-batang-area">
+                <canvas id="grafikBatang" aria-label="Grafik pemasukan dan pengeluaran enam bulan terakhir"></canvas>
+            </div>
+
+            <p id="pesanBatang" class="pesan-kosong" hidden>
+                Belum ada transaksi untuk ditampilkan.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- NAVBAR SAKU HEMAT -->
+    <nav class="bottom-nav-container2">
+        <ul class="bottom-nav">
+            <li>
+                <a href="1.html" class="nav-link">
+                    <span>⌂</span>Beranda
+                </a>
+            </li>
+            <li>
+                <a href="Pemasukan.html" class="nav-link">
+                    <span>↗</span>Pemasukan
+                </a>
+            </li>
+            <li>
+                <a href="Pengeluaran.html" class="nav-link">
+                    <span>↘</span>Pengeluaran
+                </a>
+            </li>
+            <li>
+                <a href="saldo.html" class="nav-link">
+                    <span>◷</span>Saldo
+                </a>
+            </li>
+            <li>
+                <a href="grafik.html" class="nav-link aktif">
+                    <span>▥</span>Grafik
+                </a>
+            </li>
+            <li>
+                <a href="tabungan.html" class="nav-link">
+                    <span>◎</span>Tabungan
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="grafik.js"></script>
+</body>
+</html>

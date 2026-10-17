@@ -1,0 +1,760 @@
+
+:root {
+    --krem: #f5f1e8;
+    --kuning: #ffdf00;
+    --hitam: #171717;
+    --putih: #fffdf8;
+    --biru: #2475f5;
+    --pink: #f20b58;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding-bottom: 110px;
+    font-family: Arial, sans-serif;
+    color: var(--hitam);
+    background: var(--krem);
+}
+
+/* HEADER BRAND */
+.header-grafik {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px max(5%, calc((100% - 1000px) / 2));
+    border-bottom: 2px solid var(--hitam);
+    background: var(--putih);
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--hitam);
+    background: var(--kuning);
+    font-size: 20px;
+}
+
+.header-grafik h1 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.header-grafik p {
+    margin: 3px 0 0;
+    font-size: 11px;
+}
+
+/* KONTEN UTAMA */
+.konten-saldo {
+    width: 92%;
+    max-width: 1000px;
+    margin: 18px auto 35px;
+}
+
+/* SALDO SEKARANG */
+.saldo-card {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 22px 18px;
+    background: #fff388;
+    border: 2px solid var(--hitam);
+    box-shadow: 4px 4px 0 var(--hitam);
+}
+
+.label {
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.saldo {
+    font-size: clamp(28px, 3vw, 36px);
+    font-weight: 900;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+/* PILIH BULAN */
+.pilih-bulan {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    margin: 16px 0;
+    padding: 14px 16px;
+    background: white;
+    border: 2px solid var(--hitam);
+    box-shadow: 4px 4px 0 var(--hitam);
+}
+
+.pilih-bulan label {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.tombol-pilih-bulan {
+    flex-shrink: 0;
+    min-width: 150px;
+    padding: 10px 14px;
+    background: white;
+    color: var(--hitam);
+    border: 2px solid var(--hitam);
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 2px 3px 0 var(--hitam);
+    transition: 0.15s ease;
+}
+
+.tombol-pilih-bulan:hover {
+    background: #69d875;
+    transform: translate(1px, 1px);
+    box-shadow: 1px 2px 0 var(--hitam);
+}
+
+.tombol-pilih-bulan:active {
+    transform: translate(2px, 3px);
+    box-shadow: none;
+}
+
+/* POPUP KALENDER */
+.popup-bulan {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.popup-bulan.active {
+    display: flex;
+    animation: munculBulan 0.25s ease;
+}
+
+.popup-bulan-box {
+    width: 100%;
+    max-width: 420px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 22px;
+    background: white;
+    border: 3px solid var(--hitam);
+    box-shadow: 7px 8px 0 var(--hitam);
+}
+
+.popup-bulan-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.popup-bulan-header h3 {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.tutup-bulan {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    background: #ffecf1;
+    border: 3px solid var(--hitam);
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 2px 3px 0 var(--hitam);
+}
+
+.tutup-bulan:active {
+    transform: translate(2px, 3px);
+    box-shadow: none;
+}
+
+/* TAHUN */
+.tahun-pilih {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tahun-pilih span {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.tahun-pilih button {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 3px solid var(--hitam);
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 2px 3px 0 var(--hitam);
+}
+
+.tahun-pilih button:hover {
+    background: #69d875;
+}
+
+/* DAFTAR BULAN */
+.daftar-bulan {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.tombol-bulan {
+    padding: 13px 5px;
+    background: white;
+    color: var(--hitam);
+    border: 3px solid var(--hitam);
+    font-size: 13px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 2px 3px 0 var(--hitam);
+    transition: 0.15s ease;
+}
+
+.tombol-bulan:hover {
+    background: #69d875;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 5px 0 var(--hitam);
+}
+
+/* KALENDER TANGGAL */
+.kalender-tanggal {
+    width: 100%;
+}
+
+.kalender-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.tombol-kembali {
+    padding: 8px;
+    background: white;
+    border: 3px solid var(--hitam);
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 2px 3px 0 var(--hitam);
+}
+
+.tombol-kembali:hover {
+    background: #69d875;
+}
+
+.nama-hari,
+.daftar-tanggal {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 5px;
+}
+
+.nama-hari {
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.daftar-tanggal button {
+    min-width: 0;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 2px solid var(--hitam);
+    background: white;
+    color: var(--hitam);
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 var(--hitam);
+    transition: 0.15s ease;
+}
+
+.daftar-tanggal button:hover:not(:disabled) {
+    background: #d8f9f9;
+    transform: translateY(-2px);
+}
+
+.daftar-tanggal button.tanggal-terpilih {
+    background: #69d875;
+    color: var(--hitam);
+}
+
+.daftar-tanggal button.tanggal-kosong {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    cursor: default;
+}
+
+.info-tanggal {
+    margin: 15px 0 12px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.aksi-kalender {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.aksi-kalender .reset-tanggal,
+.aksi-kalender .terapkan-tanggal {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px;
+    border: 3px solid var(--hitam);
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 3px 4px 0 var(--hitam);
+    transition: 0.15s ease;
+}
+
+.aksi-kalender .reset-tanggal {
+    background: white;
+    color: var(--hitam);
+}
+
+.aksi-kalender .terapkan-tanggal {
+    background: #69d875;
+    color: var(--hitam);
+}
+
+.aksi-kalender .reset-tanggal:hover,
+.aksi-kalender .terapkan-tanggal:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 5px 0 var(--hitam);
+}
+
+.aksi-kalender .reset-tanggal:active,
+.aksi-kalender .terapkan-tanggal:active {
+    transform: translateY(2px);
+    box-shadow: 1px 1px 0 var(--hitam);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@keyframes munculBulan {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* PEMASUKAN DAN PENGELUARAN */
+.dua-card {
+    display: flex;
+    gap: 14px;
+    width: 100%;
+    margin: 16px 0;
+}
+
+.card {
+    flex: 1;
+    min-width: 0;
+    padding: 18px;
+    border: 2px solid var(--hitam);
+    box-shadow: 4px 4px 0 var(--hitam);
+}
+
+.pemasukan {
+    background: #d8f9f9;
+}
+
+.pengeluaran {
+    background: #ffecf1;
+}
+
+.jumlah {
+    font-size: clamp(20px, 2.5vw, 27px);
+    font-weight: 900;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+/* TABUNGAN */
+.tabungan {
+    width: 100%;
+    margin: 16px 0;
+    padding: 18px;
+    background: white;
+    border: 2px solid var(--hitam);
+    box-shadow: 4px 4px 0 var(--hitam);
+}
+
+/* STATUS */
+.status {
+    width: 100%;
+    margin: 16px 0;
+    padding: 18px;
+    border: 2px solid var(--hitam);
+    box-shadow: 4px 4px 0 var(--hitam);
+    background: var(--krem);
+}
+
+.status-box {
+    padding: 14px;
+    border: 2px solid var(--hitam);
+    transition: 0.3s ease;
+}
+
+.status-box h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.status-box p {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.status-box.aman {
+    background: #a9e6ad;
+    color: var(--hitam);
+}
+
+.status-box.waspada {
+    background: #fff388;
+    color: var(--hitam);
+}
+
+.status-box.kritis {
+    background: #fd7197;
+    color: var(--hitam);
+}
+
+.status-box.belum-data {
+    background: #e5e5e5;
+    color: var(--hitam);
+}
+
+/* TOMBOL TRANSAKSI */
+.tombol-area {
+    display: flex;
+    gap: 14px;
+    width: 100%;
+    margin: 18px 0 28px;
+}
+
+.tombol-area a {
+    flex: 1;
+    min-width: 0;
+    text-decoration: none;
+}
+
+.tombol-area button {
+    width: 100%;
+    min-height: 90px;
+    padding: 12px;
+    border: 2px solid var(--hitam);
+    box-shadow: 4px 4px 0 var(--hitam);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.tombol-pemasukan {
+    background: #d8f9f9;
+    color: var(--hitam);
+}
+
+.tombol-pengeluaran {
+    background: #ffecf1;
+    color: var(--hitam);
+}
+
+.tombol-area button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--hitam);
+}
+
+.tombol-area button:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+.tombol-area span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+/* NAVBAR - SAMA DENGAN PEMASUKAN */
+.bottom-nav-container2 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px;
+    border-top: 2px solid var(--hitam);
+    background: var(--krem);
+}
+
+.bottom-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 900px;
+    gap: 8px;
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    border: 3px solid var(--hitam);
+    border-radius: 24px;
+    background: var(--putih);
+    box-shadow: 4px 4px 0 var(--hitam);
+}
+
+.bottom-nav li {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 48px;
+    padding: 5px 3px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    color: var(--hitam);
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.15s ease;
+}
+
+.nav-link span {
+    font-size: 20px;
+}
+
+.nav-link:hover,
+.nav-link.aktif {
+    border: 2px solid var(--hitam);
+    background: var(--kuning);
+    color: var(--hitam);
+    box-shadow: 2px 2px 0 var(--hitam);
+}
+
+/* RESPONSIVE TABLET */
+@media (min-width: 601px) and (max-width: 1100px) {
+    .konten-saldo {
+        width: 92%;
+    }
+
+    .saldo-card {
+        padding: 20px 16px;
+    }
+
+    .card,
+    .tabungan,
+    .status {
+        padding: 16px;
+    }
+
+    .dua-card,
+    .tombol-area {
+        gap: 12px;
+    }
+
+    .jumlah {
+        font-size: clamp(19px, 2.5vw, 25px);
+    }
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 600px) {
+    body {
+        padding-bottom: 100px;
+    }
+
+    .header-grafik {
+        gap: 10px;
+        padding: 10px 4%;
+    }
+
+    .logo {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+    }
+
+    .header-grafik h1 {
+        font-size: 16px;
+    }
+
+    .konten-saldo {
+        width: 92%;
+        margin-top: 15px;
+    }
+
+    .saldo-card {
+        padding: 18px 14px;
+    }
+
+    .saldo {
+        font-size: 28px;
+    }
+
+    .pilih-bulan {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .tombol-pilih-bulan {
+        width: 100%;
+    }
+
+    .dua-card,
+    .tombol-area {
+        flex-direction: column;
+    }
+
+    .card,
+    .tabungan,
+    .status {
+        padding: 14px;
+    }
+
+    .jumlah {
+        font-size: 22px;
+    }
+
+    .status-box {
+        padding: 12px;
+    }
+
+    .status-box h2 {
+        font-size: 18px;
+    }
+
+    .tombol-area button {
+        min-height: 75px;
+    }
+
+    .popup-bulan-box {
+        width: 100%;
+        max-width: 420px;
+        padding: 18px;
+    }
+
+    .bottom-nav-container2 {
+        padding: 8px;
+    }
+
+    .bottom-nav {
+        gap: 3px;
+        padding: 5px;
+    }
+
+    .nav-link {
+        gap: 3px;
+        min-height: 45px;
+        padding: 4px 1px;
+        font-size: 9px;
+    }
+
+    .nav-link span {
+        font-size: 18px;
+    }
+}
+
+/* HP KECIL */
+@media (max-width: 380px) {
+    .popup-bulan-box {
+        padding: 12px;
+    }
+
+    .daftar-bulan {
+        gap: 6px;
+    }
+
+    .tombol-bulan {
+        padding: 11px 2px;
+        font-size: 11px;
+    }
+
+    .nama-hari {
+        font-size: 9px;
+    }
+
+    .nama-hari,
+    .daftar-tanggal {
+        gap: 3px;
+    }
+
+    .daftar-tanggal button {
+        font-size: 11px;
+    }
+
+    .bottom-nav {
+        gap: 2px;
+        padding: 4px;
+    }
+
+    .nav-link {
+        font-size: 8px;
+    }
+}

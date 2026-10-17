@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - SakuHemat</title>
+
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <div class="logo">
+            💰
+        </div>
+
+        <h1>SAKUHEMAT</h1>
+
+        <p class="subtitle">
+            Kelola uang jajanmu dengan lebih bijak.
+        </p>
+
+
+        <!-- ============================== -->
+        <!-- FORM LOGIN -->
+        <!-- ============================== -->
+
+        <div class="auth-box">
+
+            <h2>LOGIN</h2>
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="contoh@gmail.com"
+            >
+
+
+            <label for="password">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Masukkan password"
+            >
+
+
+            <div class="peringatan">
+
+                ⚠️ Jangan sampai lupa email dan password
+                kamu. Keduanya diperlukan untuk masuk
+                ke SakuHemat.
+
+            </div>
+
+
+            <button id="tombolLogin">
+                LOGIN
+            </button>
+
+
+            <a
+                href="lupa-pasword.html"
+                id="linkLupaPassword"
+                class="forgot-link"
+                style="display: none;"
+            >
+                Lupa Password?
+            </a>
+
+
+            <p class="switch-page">
+
+                Belum punya akun?
+
+                <a href="daftar.html">
+                    Buat akun
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================== -->
+    <!-- POPUP -->
+    <!-- ============================== -->
+
+    <div id="popupOverlay" class="popup-overlay">
+
+        <div class="popup">
+
+            <div id="popupIcon" class="popup-icon">
+                ⚠️
+            </div>
+
+            <h2 id="popupTitle">
+                Peringatan
+            </h2>
+
+            <p id="popupMessage">
+                Pesan
+            </p>
+
+            <button id="popupButton">
+                OKE
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="auth.js"></script>
+
+</body>
+
+</html>
