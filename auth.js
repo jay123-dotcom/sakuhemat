@@ -550,3 +550,53 @@ if (tombolLogout) {
     });
 
 }
+
+// ==========================================
+// LIHAT / SEMBUNYIKAN PASSWORD
+// ==========================================
+
+const togglePassword = document.getElementById("togglePassword");
+const passwordInput = document.getElementById("password");
+const eyeIcon = document.getElementById("eyeIcon");
+
+if (togglePassword && passwordInput && eyeIcon) {
+
+    togglePassword.addEventListener("click", function() {
+
+        const sedangTersembunyi =
+            passwordInput.type === "password";
+
+        passwordInput.type =
+            sedangTersembunyi ? "text" : "password";
+
+        if (sedangTersembunyi) {
+
+            eyeIcon.innerHTML = `
+                <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/>
+                <circle cx="12" cy="12" r="3"/>
+            `;
+
+            togglePassword.setAttribute(
+                "aria-label",
+                "Sembunyikan password"
+            );
+
+        } else {
+
+            eyeIcon.innerHTML = `
+                <path d="M3 3l18 18"/>
+                <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/>
+                <path d="M9.9 5.2A11 11 0 0 1 12 5c6.4 0 10 7 10 7a15 15 0 0 1-3.1 3.9"/>
+                <path d="M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7a10 10 0 0 0 4-.8"/>
+            `;
+
+            togglePassword.setAttribute(
+                "aria-label",
+                "Tampilkan password"
+            );
+
+        }
+
+    });
+
+}
