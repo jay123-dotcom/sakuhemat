@@ -321,10 +321,10 @@ body > .bottom-nav-container2 {
 ========================= */
 @media (min-width: 601px) and (max-width: 1100px) {
     #sidebar {
-        max-width: 720px;
-        gap: 12px;
-        padding: 7px 10px 7px 40px;
-    }
+    max-width: 850px;
+    gap: 8px;
+    padding: 7px 20px;
+}
 
     #sidebar li a {
         padding: 4px 10px;
