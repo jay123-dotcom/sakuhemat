@@ -14,7 +14,7 @@ if (
     )
 ) {
 
-    window.location.href = "saldo.html";
+    window.location.href = "1.html";
 
 }
 
