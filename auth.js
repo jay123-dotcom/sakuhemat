@@ -391,7 +391,7 @@ if (tombolLogin) {
                 "Login Berhasil!",
                 "Selamat datang kembali di SakuHemat.",
                 "✅",
-                "Saldo.html"
+                "1.html"
             );
 
         }
