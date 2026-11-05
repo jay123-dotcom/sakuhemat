@@ -292,3 +292,37 @@ body {
 
     cursor: pointer;
 }
+
+
+/* =================================
+   TOGGLE PASSWORD
+================================= */
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 48px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    color: #555;
+    cursor: pointer;
+}
+
+.toggle-password:hover {
+    color: crimson;
+}
