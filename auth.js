@@ -522,3 +522,31 @@ if (tombolReset) {
     );
 
 }
+
+// ==========================================
+// LOGOUT SAKUHEMAT
+// ==========================================
+
+const tombolLogout = document.getElementById("tombolLogout");
+
+if (tombolLogout) {
+
+    tombolLogout.addEventListener("click", function(event) {
+
+        event.preventDefault();
+
+        const yakin = confirm("Apakah kamu yakin ingin logout?");
+
+        if (yakin) {
+
+            // Akhiri sesi login
+            localStorage.removeItem("statusLogin");
+
+            // Kembali ke halaman login
+            window.location.href = "login.html";
+
+        }
+
+    });
+
+}
