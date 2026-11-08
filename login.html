@@ -1,152 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f1e8">
 
-    <title>Login - SakuHemat</title>
+    <title>Login | SakuHemat</title>
 
     <link rel="stylesheet" href="auth.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="auth-container">
+    <main class="auth-page">
 
-        <div class="logo">
-            💰
-        </div>
+        <a href="1.html" class="brand">
+            <span class="brand-icon">S</span>
+            SAKU<span>HEMAT.</span>
+        </a>
 
-        <h1>SAKUHEMAT</h1>
+        <div class="auth-container" id="authContainer">
 
-        <p class="subtitle">
-            Kelola uang jajanmu dengan lebih bijak.
-        </p>
+            <!-- FORM LOGIN -->
+            <section class="form-container sign-in-container">
+                <form class="auth-form" onsubmit="return false">
 
+                    <span class="eyebrow">WELCOME BACK</span>
+                    <h1>Sign In</h1>
+                    <p class="form-description">
+                        Masuk dan lanjutkan perjalanan mengatur uangmu.
+                    </p>
 
-        <!-- ============================== -->
-        <!-- FORM LOGIN -->
-        <!-- ============================== -->
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Masukkan email"
+                        autocomplete="email"
+                    >
 
-        <div class="auth-box">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Masukkan password"
+                        autocomplete="current-password"
+                    >
 
-            <h2>LOGIN</h2>
+                    <a href="lupa-pasword.html" class="forgot-link">
+                        Lupa password?
+                    </a>
 
-            <label for="email">
-                Email
-            </label>
+                    <button type="button" id="tombolLogin" class="main-button">
+                        SIGN IN <span>→</span>
+                    </button>
 
-            <input
-                type="email"
-                id="email"
-                placeholder="contoh@gmail.com"
-            >
+                    <p class="mobile-switch">
+                        Belum punya akun?
+                        <button type="button" id="mobileSignUp">Buat akun</button>
+                    </p>
 
-
-            <label for="password">
-                Password
-            </label>
-
-            
-            <div class="password-wrapper">
-
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Masukkan password"
-            >
-
-            <button
-                type="button"
-                id="togglePassword"
-                class="toggle-password"
-                aria-label="Tampilkan password"
-                >
-                <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg"
-                    width="22" height="22" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/>
-                    <circle cx="12" cy="12" r="3"/>
-                </svg>
-            </button>
-
-        </div>
+                </form>
+            </section>
 
 
+            <!-- FORM DAFTAR -->
+            <section class="form-container sign-up-container">
+                <form class="auth-form" onsubmit="return false">
 
-            <div class="peringatan">
+                    <span class="eyebrow">START YOUR JOURNEY</span>
+                    <h1>Create Account</h1>
+                    <p class="form-description">
+                        Buat akun dan mulai kelola uang jajanmu.
+                    </p>
 
-                ⚠️ Jangan sampai lupa email dan password
-                kamu. Keduanya diperlukan untuk masuk
-                ke SakuHemat.
+                    <label for="emailDaftar">Email</label>
+                    <input
+                        type="email"
+                        id="emailDaftar"
+                        placeholder="Masukkan email"
+                        autocomplete="email"
+                    >
 
+                    <label for="passwordDaftar">Password</label>
+                    <input
+                        type="password"
+                        id="passwordDaftar"
+                        placeholder="Buat password"
+                        autocomplete="new-password"
+                    >
+
+                    <button type="button" id="tombolDaftar" class="main-button">
+                        CREATE ACCOUNT <span>↗</span>
+                    </button>
+
+                    <p class="mobile-switch">
+                        Sudah punya akun?
+                        <button type="button" id="mobileSignIn">Sign in</button>
+                    </p>
+
+                </form>
+            </section>
+
+
+            <!-- PANEL ANIMASI -->
+            <div class="overlay-container">
+                <div class="overlay">
+
+                    <section class="overlay-panel overlay-left">
+                        <span class="overlay-symbol">✦</span>
+                        <span class="eyebrow">ALREADY A MEMBER?</span>
+                        <h2>Welcome<br>Back!</h2>
+                        <p>
+                            Uangmu, kendalimu. Yuk lanjutkan perjalanan
+                            finansial yang lebih baik.
+                        </p>
+                        <button type="button" class="outline-button" id="signIn">
+                            SIGN IN <span>←</span>
+                        </button>
+                    </section>
+
+                    <section class="overlay-panel overlay-right">
+                        <span class="overlay-symbol">✧</span>
+                        <span class="eyebrow">NEW HERE?</span>
+                        <h2>Start Your<br>Journey!</h2>
+                        <p>
+                            Mulai kebiasaan mengelola uang dengan lebih
+                            cerdas bersama SakuHemat.
+                        </p>
+                        <button type="button" class="outline-button" id="signUp">
+                            CREATE ACCOUNT <span>→</span>
+                        </button>
+                    </section>
+
+                </div>
             </div>
 
-
-            <button id="tombolLogin">
-                LOGIN
-            </button>
-
-
-            <a
-                href="lupa-pasword.html"
-                id="linkLupaPassword"
-                class="forgot-link"
-                style="display: none;"
-            >
-                Lupa Password?
-            </a>
-
-
-            <p class="switch-page">
-
-                Belum punya akun?
-
-                <a href="daftar.html">
-                    Buat akun
-                </a>
-
-            </p>
-
         </div>
 
-    </div>
+        <p class="page-footer">TRACK YOUR MONEY · SAVE YOUR FUTURE</p>
+
+    </main>
 
 
-    <!-- ============================== -->
-    <!-- POPUP -->
-    <!-- ============================== -->
-
+    <!-- POPUP LAMA -->
     <div id="popupOverlay" class="popup-overlay">
-
         <div class="popup">
-
-            <div id="popupIcon" class="popup-icon">
-                ⚠️
-            </div>
-
-            <h2 id="popupTitle">
-                Peringatan
-            </h2>
-
-            <p id="popupMessage">
-                Pesan
-            </p>
-
-            <button id="popupButton">
-                OKE
-            </button>
-
+            <div id="popupIcon" class="popup-icon">⚠️</div>
+            <h2 id="popupTitle">Peringatan</h2>
+            <p id="popupMessage">Pesan</p>
+            <button id="popupButton" type="button">MENGERTI</button>
         </div>
-
     </div>
 
+
+    <script>
+        const authContainer = document.getElementById("authContainer");
+
+        document.getElementById("signUp").addEventListener("click", () => {
+            authContainer.classList.add("right-panel-active");
+        });
+
+        document.getElementById("signIn").addEventListener("click", () => {
+            authContainer.classList.remove("right-panel-active");
+        });
+
+        document.getElementById("mobileSignUp").addEventListener("click", () => {
+            authContainer.classList.add("right-panel-active");
+        });
+
+        document.getElementById("mobileSignIn").addEventListener("click", () => {
+            authContainer.classList.remove("right-panel-active");
+        });
+    </script>
 
     <script src="auth.js"></script>
 
 </body>
-
 </html>
