@@ -43,11 +43,11 @@ body {
     background: var(--putih);
 }
 
-/* =========================
-   LOGO SAKUHEMAT ANIMASI
-========================= */
+/* =================================
+   LOGO SAKUHEMAT - SOFT GLOW
+================================= */
 
-.logo {
+.header-grafik .logo {
     position: relative;
     display: flex;
     align-items: center;
@@ -57,37 +57,99 @@ body {
     width: 54px;
     height: 54px;
 
-    border: 2px solid black;
-    border-radius: 16px;
-
-    background: linear-gradient(
-        145deg,
-        #ffffff,
-        #d9fff0
-    );
-
-    box-shadow: 3px 4px 0 black;
-
     overflow: hidden;
+    border: 1.5px solid rgba(35, 100, 75, 0.6);
+    border-radius: 14px;
 
-    animation: logoFloat 3s ease-in-out infinite;
+    background: #b9f5dc;
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    box-shadow: 0 3px 8px rgba(25, 80, 55, 0.16);
+
+    animation: sakuGlowFloat 3s ease-in-out infinite;
 }
 
 /* GAMBAR LOGO */
 
-.logo img {
+.header-grafik .logo img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 12px;
 
-    transition: transform 0.4s ease;
+    animation: sakuImagePulse 3s ease-in-out infinite;
+}
 
-    animation: logoTilt 4s ease-in-out infinite;
+/* EFEK KILAU */
+
+.header-grafik .logo::after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -100%;
+
+    width: 45%;
+    height: 160%;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255, 255, 255, 0.75),
+        transparent
+    );
+
+    transform: skewX(-25deg);
+    animation: sakuLightShine 3.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* ANIMASI MELAYANG + CAHAYA */
+
+@keyframes sakuGlowFloat {
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0 3px 8px rgba(25, 80, 55, 0.16);
+    }
+
+    50% {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 12px rgba(25, 80, 55, 0.18),
+                    0 0 13px rgba(80, 220, 160, 0.4);
+    }
+}
+
+/* ANIMASI GAMBAR */
+
+@keyframes sakuImagePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.035);
+    }
+}
+
+/* ANIMASI KILAUAN */
+
+@keyframes sakuLightShine {
+    0%, 55% {
+        left: -100%;
+    }
+
+    85%, 100% {
+        left: 150%;
+    }
+}
+
+/* AKSESIBILITAS */
+
+@media (prefers-reduced-motion: reduce) {
+    .header-grafik .logo,
+    .header-grafik .logo img,
+    .header-grafik .logo::after {
+        animation: none;
+    }
 }
 
 /* EFEK KILAU */
