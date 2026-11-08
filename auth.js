@@ -520,6 +520,7 @@ if (tombolReset) {
 // ==========================================
 // LOGOUT SAKUHEMAT
 // ==========================================
+console.log("AUTH.JS BERHASIL DIJALANKAN");
 
 const tombolLogout = document.getElementById("tombolLogout");
 
