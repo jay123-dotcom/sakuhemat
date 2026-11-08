@@ -4,65 +4,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAKUHEMAT</title>
+
+    <meta name="theme-color" content="#101a18">
+    <title>SakuHemat | Smart Money, Better Future</title>
 
     <link rel="stylesheet" href="2.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- NAVBAR ATAS -->
-    <ul id="sidebar">
-        <li class="brand-icon">
-            <img src="img4.jpg" alt="SakuHemat">
-        </li>
+    <header class="modern-header">
 
-        <li><a href="about.html" class="about">ABOUT</a></li>
-        <li><a href="features.html" class="feature">FEATURES</a></li>
-        <li><a href="contact.html" class="contact">CONTACT</a></li>
+        <nav class="modern-navbar">
 
-        <li class="divider"></li>
-        <li><a href="1.html" class="home">HOME</a></li>
-        <li>
-            <a href="#" id="tombolLogout" class="contact">LOGOUT</a>
-        </li>
-    </ul>
+            <a href="1.html" class="modern-brand">
+                <span class="brand-logo">
+                    <img src="img4.jpg" alt="SakuHemat">
+                </span>
 
-    <!-- TAGLINE BRAND -->
-    <center>
-        <span class="project" id="manage">
-            Manage your money wisely.
-        </span>
-    </center>
+                <span class="brand-name">Saku<span>Hemat.</span></span>
+            </a>
 
-    <!-- MAIN CONTENT -->
-    <center>
-        <h1 class="sakuhemat-1">SAKUHEMAT</h1>
+            <ul id="sidebar">
 
-        <h1 class="sakuhemat-2">
-            <span class="text-modern">SAVING</span>
-        </h1>
+                <li><a href="about.html" class="top-link">ABOUT</a></li>
 
-        <h1 class="sakuhemat-3">
-            <span class="experience">SUPERVISOR.</span>
-        </h1>
-    </center>
+                <li><a href="features.html" class="top-link">FEATURES</a></li>
 
-    <!-- SLOGAN -->
-    <div class="container" id="container-1">
-        <div class="purpose">
-            <p>
-                I Smarten up
-                <span class="span-1">Your Daily</span>
-                Pocket for a
-                <span class="span-2">Better Future.</span>
+                <li><a href="contact.html" class="top-link">CONTACT</a></li>
+
+                <li class="divider"></li>
+
+                <li><a href="1.html" class="top-link active">HOME</a></li>
+
+                <li>
+                    <a href="#" id="tombolLogout" class="logout-link">
+                        LOGOUT
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <main class="home-hero">
+
+        <div class="hero-glow hero-glow-one"></div>
+        <div class="hero-glow hero-glow-two"></div>
+
+        <section class="hero-content">
+
+            <div class="hero-label">
+                <span class="status-dot"></span>
+                SMART MONEY MANAGEMENT
+            </div>
+
+            <p class="hero-pretitle">
+                WELCOME TO
             </p>
+
+            <h1 class="hero-title">
+                SAKU<span>HEMAT.</span>
+            </h1>
+
+            <h2 class="hero-subtitle">
+                Smart Money.<br>
+                <span>Better Future.</span>
+            </h2>
+
+            <p class="hero-description">
+                Kelola uang jajan dengan lebih cerdas.
+                Catat pemasukan, pantau pengeluaran,
+                dan wujudkan target tabunganmu.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="pemasukan.html" class="hero-button primary-button">
+                    Mulai Catat
+                    <span>↗</span>
+                </a>
+
+                <a href="saldo.html" class="hero-button secondary-button">
+                    Lihat Saldo
+                    <span>→</span>
+                </a>
+
+            </div>
+
+            <div class="hero-footer">
+                <span>TRACK</span>
+                <span class="footer-line"></span>
+                <span>SAVE</span>
+                <span class="footer-line"></span>
+                <span>GROW</span>
+            </div>
+
+        </section>
+
+
+        <!-- VISUAL DEKORATIF -->
+        <div class="hero-visual">
+
+            <div class="visual-orbit orbit-one"></div>
+            <div class="visual-orbit orbit-two"></div>
+
+            <div class="visual-card">
+
+                <div class="visual-card-top">
+                    <span>SAKUHEMAT</span>
+                    <span class="visual-icon">✦</span>
+                </div>
+
+                <div class="visual-wallet">
+                    <span class="wallet-icon">◈</span>
+                </div>
+
+                <p class="visual-caption">
+                    YOUR MONEY,<br>
+                    YOUR CONTROL.
+                </p>
+
+                <div class="visual-card-bottom">
+                    <span>SMART SAVING</span>
+                    <span>✧</span>
+                </div>
+
+            </div>
+
+            <div class="floating-bubble bubble-one">↗</div>
+            <div class="floating-bubble bubble-two">✦</div>
+            <div class="floating-bubble bubble-three">◎</div>
+
         </div>
-    </div>
+
+    </main>
+
 
     <!-- NAVBAR BAWAH -->
     <nav class="bottom-nav-container2">
+
         <ul class="bottom-nav">
+
             <li>
                 <a href="1.html" class="nav-link aktif" aria-current="page">
                     <span>⌂</span>
@@ -104,10 +194,16 @@
                     Tabungan
                 </a>
             </li>
+
         </ul>
+
     </nav>
 
+
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
     <script src="auth.js"></script>
+
 </body>
 </html>
+
