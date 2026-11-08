@@ -81,31 +81,25 @@ function tampilkanPopup(
 // DAFTAR AKUN
 // ==========================================
 
-const tombolDaftar =
-    document.getElementById("tombolDaftar");
+let email =
+    document
+        .getElementById("emailDaftar")
+        ?.value
+        .trim()
+        .toLowerCase() ||
+    document
+        .getElementById("email")
+        .value
+        .trim()
+        .toLowerCase();
 
-
-if (tombolDaftar) {
-
-    tombolDaftar.addEventListener(
-        "click",
-        function (event) {
-
-            event.preventDefault();
-
-
-            let email =
-                document
-                    .getElementById("email")
-                    .value
-                    .trim()
-                    .toLowerCase();
-
-
-            let password =
-                document
-                    .getElementById("password")
-                    .value;
+let password =
+    document
+        .getElementById("passwordDaftar")
+        ?.value ||
+    document
+        .getElementById("password")
+        .value;
 
 
             // ==============================
