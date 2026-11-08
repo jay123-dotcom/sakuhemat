@@ -474,31 +474,30 @@ if (tombolReset) {
 
 }
 
-// ==========================================
-// LOGOUT SAKUHEMAT
-// ==========================================
-document.addEventListener("DOMContentLoaded", function () {
-    alert("AUTH.JS AKTIF");
 
-    const tombolLogout = document.getElementById("tombolLogout");
+/* ==========================================
+   LOGOUT SAKUHEMAT
+========================================== */
 
-    if (!tombolLogout) {
-        alert("TOMBOL LOGOUT TIDAK DITEMUKAN!");
-        return;
-    }
+const tombolLogout = document.getElementById("tombolLogout");
 
-    alert("TOMBOL LOGOUT BERHASIL DITEMUKAN!");
+if (tombolLogout) {
 
-    tombolLogout.addEventListener("click", function (event) {
+    tombolLogout.addEventListener("click", function(event) {
+
         event.preventDefault();
-
-        alert("TOMBOL LOGOUT DIKLIK!");
 
         const yakin = confirm("Apakah kamu yakin ingin logout?");
 
         if (yakin) {
+
             localStorage.removeItem("statusLogin");
+
             window.location.href = "login.html";
+
         }
+
     });
-});
+
+}
+
