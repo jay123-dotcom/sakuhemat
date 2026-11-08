@@ -762,3 +762,109 @@ select option {
     flex-shrink: 0;
 }
 
+
+/* =====================================
+   SAKUHEMAT - PREMIUM HEADER TYPOGRAPHY
+===================================== */
+
+/* JUDUL SAKU HEMAT */
+
+.header-grafik h1 {
+    position: relative;
+    display: inline-block;
+
+    color: #174d35;
+
+    animation: titleBreath 3s ease-in-out infinite;
+
+    text-shadow: 0 1px 2px rgba(40, 120, 80, 0.12);
+}
+
+/* GARIS HIJAU DI BAWAH JUDUL */
+
+.header-grafik h1::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #42b883,
+        #b1e8c9,
+        #42b883,
+        transparent
+    );
+
+    background-size: 200% 100%;
+
+    animation: titleLineShine 2.8s ease-in-out infinite;
+}
+
+/* SUBTITLE */
+
+.header-grafik p {
+    animation: subtitleFloat 3s ease-in-out infinite;
+    color: #426653;
+}
+
+/* JUDUL BERNAFAS */
+
+@keyframes titleBreath {
+    0%, 100% {
+        text-shadow: 0 1px 2px rgba(40, 120, 80, 0.12);
+        letter-spacing: normal;
+    }
+
+    50% {
+        text-shadow: 0 2px 8px rgba(66, 184, 131, 0.24);
+        letter-spacing: 0.4px;
+    }
+}
+
+/* KILAUAN GARIS */
+
+@keyframes titleLineShine {
+    0%, 100% {
+        background-position: 100% 0;
+        opacity: 0.65;
+    }
+
+    50% {
+        background-position: 0 0;
+        opacity: 1;
+    }
+}
+
+/* SUBTITLE BERGERAK HALUS */
+
+@keyframes subtitleFloat {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.85;
+    }
+
+    50% {
+        transform: translateY(-2px);
+        opacity: 1;
+    }
+}
+
+/* PENGATURAN AKSESIBILITAS */
+
+@media (prefers-reduced-motion: reduce) {
+    .header-grafik h1,
+    .header-grafik h1::after,
+    .header-grafik p {
+        animation: none !important;
+    }
+}
+
+
