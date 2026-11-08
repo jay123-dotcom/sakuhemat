@@ -699,3 +699,53 @@ select option {
     margin: 0 auto;
     flex-shrink: 0;
 }
+
+/* =========================
+   SAKUHEMAT LOGO ANIMATION
+========================= */
+
+.header-grafik .logo {
+    width: 58px !important;
+    height: 58px !important;
+    flex: 0 0 58px !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid black !important;
+    border-radius: 16px !important;
+    background: #b8f5d8 !important;
+    box-shadow: 4px 5px 0 black !important;
+
+    overflow: hidden;
+    animation: sakuLogoBounce 2s ease-in-out infinite !important;
+}
+
+.header-grafik .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    animation: sakuLogoTilt 2s ease-in-out infinite;
+}
+
+@keyframes sakuLogoBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(-5deg);
+    }
+}
+
+@keyframes sakuLogoTilt {
+    0%, 100% {
+        transform: rotate(0deg) scale(0.95);
+    }
+
+    50% {
+        transform: rotate(5deg) scale(1.05);
+    }
+}
