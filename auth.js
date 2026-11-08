@@ -520,28 +520,28 @@ if (tombolReset) {
 // ==========================================
 // LOGOUT SAKUHEMAT
 // ==========================================
-console.log("AUTH.JS BERHASIL DIJALANKAN");
+document.addEventListener("DOMContentLoaded", function () {
+    alert("AUTH.JS AKTIF");
 
-const tombolLogout = document.getElementById("tombolLogout");
+    const tombolLogout = document.getElementById("tombolLogout");
 
-if (tombolLogout) {
+    if (!tombolLogout) {
+        alert("TOMBOL LOGOUT TIDAK DITEMUKAN!");
+        return;
+    }
 
-    tombolLogout.addEventListener("click", function(event) {
+    alert("TOMBOL LOGOUT BERHASIL DITEMUKAN!");
 
+    tombolLogout.addEventListener("click", function (event) {
         event.preventDefault();
+
+        alert("TOMBOL LOGOUT DIKLIK!");
 
         const yakin = confirm("Apakah kamu yakin ingin logout?");
 
         if (yakin) {
-
-            // Akhiri sesi login
             localStorage.removeItem("statusLogin");
-
-            // Kembali ke halaman login
             window.location.href = "login.html";
-
         }
-
     });
-
-}
+});
