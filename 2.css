@@ -1722,4 +1722,77 @@ body {
 
 
 
+/* =================================
+   SAKUHEMAT - SOFT AMBIENT GLOW
+================================= */
+
+.home-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* Lapisan cahaya */
+.hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(85px);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.55;
+    animation: ambientMove 9s ease-in-out infinite alternate;
+}
+
+/* Cahaya biru mint */
+.hero-glow-one {
+    width: 420px;
+    height: 420px;
+    top: 5%;
+    left: 5%;
+    background: radial-gradient(
+        circle,
+        rgba(0, 209, 255, 0.48) 0%,
+        rgba(0, 209, 255, 0.18) 45%,
+        transparent 75%
+    );
+}
+
+/* Cahaya kuning pastel */
+.hero-glow-two {
+    width: 400px;
+    height: 400px;
+    top: 0;
+    right: 3%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 230, 0, 0.38) 0%,
+        rgba(255, 230, 0, 0.14) 45%,
+        transparent 75%
+    );
+    animation-delay: -4s;
+}
+
+/* Gerakan cahaya lembut */
+@keyframes ambientMove {
+    0% {
+        transform: translate(0, 0) scale(0.95);
+    }
+    50% {
+        transform: translate(18px, -12px) scale(1.08);
+    }
+    100% {
+        transform: translate(-12px, 15px) scale(1);
+    }
+}
+
+/* HP: ukuran cahaya lebih kecil */
+@media (max-width: 600px) {
+    .hero-glow-one,
+    .hero-glow-two {
+        width: 260px;
+        height: 260px;
+        filter: blur(65px);
+    }
+}
+
 
