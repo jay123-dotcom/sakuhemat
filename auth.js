@@ -77,130 +77,87 @@ function tampilkanPopup(
 }
 
 
+
 // ==========================================
 // DAFTAR AKUN
 // ==========================================
 
-let email =
-    document
-        .getElementById("emailDaftar")
-        ?.value
-        .trim()
-        .toLowerCase() ||
-    document
-        .getElementById("email")
-        .value
-        .trim()
-        .toLowerCase();
+const tombolDaftar = document.getElementById("tombolDaftar");
 
-let password =
-    document
-        .getElementById("passwordDaftar")
-        ?.value ||
-    document
-        .getElementById("password")
-        .value;
+if (tombolDaftar) {
 
+    tombolDaftar.addEventListener("click", function (event) {
 
-            // ==============================
-            // CEK EMAIL
-            // ==============================
+        event.preventDefault();
 
-            if (email === "") {
+        const inputEmail = document.getElementById("emailDaftar") ||
+                           document.getElementById("email");
 
-                tampilkanPopup(
-                    "Email Belum Diisi!",
-                    "Masukkan email terlebih dahulu.",
-                    "⚠️"
-                );
+        const inputPassword = document.getElementById("passwordDaftar") ||
+                              document.getElementById("password");
 
-                return;
-            }
+        const email = inputEmail.value.trim().toLowerCase();
+        const password = inputPassword.value;
 
-
-            // ==============================
-            // CEK PASSWORD
-            // ==============================
-
-            if (password === "") {
-
-                tampilkanPopup(
-                    "Password Belum Diisi!",
-                    "Masukkan password terlebih dahulu.",
-                    "⚠️"
-                );
-
-                return;
-            }
-
-
-            // ==============================
-            // CEK AKUN LAMA
-            // ==============================
-
-            const akunLama =
-                JSON.parse(
-                    localStorage.getItem(
-                        "akunSakuHemat"
-                    )
-                );
-
-
-            if (akunLama) {
-
-                tampilkanPopup(
-                    "Akun Sudah Ada!",
-                    "Sudah ada akun SakuHemat yang tersimpan. Silakan login menggunakan akun tersebut.",
-                    "⚠️",
-                    "login.html"
-                );
-
-                return;
-            }
-
-
-            // ==============================
-            // BUAT AKUN
-            // ==============================
-
-            const akunBaru = {
-
-                email: email,
-
-                password: password
-
-            };
-
-
-            // ==============================
-            // SIMPAN AKUN
-            // ==============================
-
-            localStorage.setItem(
-                "akunSakuHemat",
-                JSON.stringify(akunBaru)
-            );
-
-
-            // Reset percobaan
-            localStorage.removeItem(
-                "percobaanLogin"
-            );
-
-
-            // ==============================
-            // BERHASIL
-            // ==============================
-
+        // CEK EMAIL
+        if (email === "") {
             tampilkanPopup(
-                "Akun Berhasil Dibuat!",
-                "Akun kamu berhasil dibuat. Jangan lupa email dan password kamu!",
-                "✅",
+                "Email Belum Diisi!",
+                "Masukkan email terlebih dahulu.",
+                "⚠️"
+            );
+            return;
+        }
+
+        // CEK PASSWORD
+        if (password === "") {
+            tampilkanPopup(
+                "Password Belum Diisi!",
+                "Masukkan password terlebih dahulu.",
+                "⚠️"
+            );
+            return;
+        }
+
+        // CEK AKUN LAMA
+        const akunLama = JSON.parse(
+            localStorage.getItem("akunSakuHemat")
+        );
+
+        if (akunLama) {
+            tampilkanPopup(
+                "Akun Sudah Ada!",
+                "Sudah ada akun SakuHemat yang tersimpan. Silakan login menggunakan akun tersebut.",
+                "⚠️",
                 "login.html"
             );
-
+            return;
         }
-    );
+
+        // BUAT AKUN
+        const akunBaru = {
+            email: email,
+            password: password
+        };
+
+        // SIMPAN AKUN
+        localStorage.setItem(
+            "akunSakuHemat",
+            JSON.stringify(akunBaru)
+        );
+
+        // RESET PERCOBAAN
+        localStorage.removeItem("percobaanLogin");
+
+        // BERHASIL
+        tampilkanPopup(
+            "Akun Berhasil Dibuat!",
+            "Akun kamu berhasil dibuat. Jangan lupa email dan password kamu!",
+            "✅",
+            "login.html"
+        );
+
+    });
 
 }
 
