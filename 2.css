@@ -1514,6 +1514,211 @@ body {
 }
 
 
+/* =========================================
+   SAKUHEMAT - ORIGINAL COLOR RESTORE
+   Layout dan animasi modern tetap dipertahankan
+========================================= */
+
+:root {
+    --sh-cream: #f5f3ec;
+    --sh-yellow: #FFE600;
+    --sh-red: crimson;
+    --sh-cyan: #00D1FF;
+    --sh-black: #080808;
+    --sh-white: #ffffff;
+}
+
+/* BACKGROUND UTAMA */
+html,
+body {
+    background: var(--sh-cream) !important;
+    color: var(--sh-black) !important;
+}
+
+/* NAVBAR ATAS */
+.modern-header,
+.modern-navbar {
+    background: var(--sh-cream) !important;
+    color: var(--sh-black) !important;
+}
+
+.modern-navbar {
+    border-color: var(--sh-black) !important;
+}
+
+.modern-brand,
+.brand-name {
+    color: var(--sh-black) !important;
+}
+
+.brand-name span {
+    color: var(--sh-red) !important;
+}
+
+/* TOMBOL NAVBAR */
+#sidebar .top-link {
+    background: var(--sh-yellow) !important;
+    color: var(--sh-black) !important;
+    border-color: var(--sh-black) !important;
+}
+
+#sidebar .top-link.active {
+    background: var(--sh-red) !important;
+    color: white !important;
+}
+
+#sidebar .logout-link {
+    background: var(--sh-yellow) !important;
+    color: var(--sh-black) !important;
+    border-color: var(--sh-black) !important;
+}
+
+#sidebar .divider {
+    background: #c5c2c2 !important;
+}
+
+/* HERO SECTION */
+.home-hero {
+    background: var(--sh-cream) !important;
+    color: var(--sh-black) !important;
+}
+
+.hero-label {
+    background: var(--sh-yellow) !important;
+    color: var(--sh-black) !important;
+    border-color: var(--sh-black) !important;
+}
+
+.status-dot {
+    background: var(--sh-red) !important;
+}
+
+.hero-title {
+    color: var(--sh-black) !important;
+}
+
+.hero-title span {
+    color: var(--sh-red) !important;
+}
+
+.hero-subtitle {
+    color: var(--sh-black) !important;
+}
+
+.hero-subtitle span {
+    color: var(--sh-cyan) !important;
+}
+
+.hero-description {
+    color: #333333 !important;
+}
+
+/* TOMBOL HERO */
+.primary-button {
+    background: var(--sh-yellow) !important;
+    color: var(--sh-black) !important;
+    border-color: var(--sh-black) !important;
+}
+
+.secondary-button {
+    background: var(--sh-cream) !important;
+    color: var(--sh-black) !important;
+    border-color: var(--sh-black) !important;
+}
+
+/* KARTU VISUAL */
+.visual-card {
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        var(--sh-cream)
+    ) !important;
+    color: var(--sh-black) !important;
+    border-color: var(--sh-black) !important;
+}
+
+.visual-card-top,
+.visual-card-bottom,
+.visual-caption {
+    color: var(--sh-black) !important;
+}
+
+.visual-icon,
+.wallet-icon {
+    color: var(--sh-red) !important;
+}
+
+.visual-wallet {
+    background: var(--sh-yellow) !important;
+    border-color: var(--sh-black) !important;
+}
+
+.floating-bubble {
+    background: var(--sh-yellow) !important;
+    color: var(--sh-black) !important;
+    border-color: var(--sh-black) !important;
+}
+
+.bubble-two {
+    background: var(--sh-red) !important;
+    color: white !important;
+}
+
+.bubble-three {
+    background: var(--sh-cyan) !important;
+    color: var(--sh-black) !important;
+}
+
+/* EFEK CAHAYA */
+.hero-glow-one {
+    background: var(--sh-yellow) !important;
+    opacity: 0.13;
+}
+
+.hero-glow-two {
+    background: var(--sh-cyan) !important;
+    opacity: 0.13;
+}
+
+/* ORBIT */
+.visual-orbit {
+    border-color: rgba(220, 20, 60, 0.25) !important;
+}
+
+/* NAVBAR BAWAH */
+.bottom-nav-container2 {
+    background: var(--sh-cream) !important;
+    border-color: var(--sh-black) !important;
+}
+
+.bottom-nav {
+    background: var(--sh-white) !important;
+    border-color: var(--sh-black) !important;
+}
+
+.bottom-nav .nav-link {
+    color: var(--sh-black) !important;
+}
+
+.bottom-nav .nav-link:hover,
+.bottom-nav .nav-link.aktif {
+    background: var(--sh-yellow) !important;
+    color: var(--sh-black) !important;
+    border-color: var(--sh-black) !important;
+}
+
+/* ANIMASI TETAP HALUS */
+@media (prefers-reduced-motion: reduce) {
+    .hero-glow,
+    .visual-orbit,
+    .floating-bubble,
+    .visual-card {
+        animation: none !important;
+    }
+}
+
+
+
 
 
 
