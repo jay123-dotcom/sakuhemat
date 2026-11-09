@@ -1795,4 +1795,35 @@ body {
     }
 }
 
+/* FIX UKURAN LOGO SAKUHEMAT */
+
+.visual-card .visual-wallet {
+    position: relative;
+    width: 125px !important;
+    height: 125px !important;
+    min-width: 125px;
+    max-width: 125px;
+    flex: 0 0 125px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.visual-card .visual-wallet .hero-logo {
+    position: static !important;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 125px;
+    max-height: 125px;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+
 
