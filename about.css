@@ -50,18 +50,22 @@ a {
 .modern-navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-    min-height: 62px;
-    margin: auto;
-    padding: 9px 15px;
-
-    border: 3px solid var(--black);
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 40px;
+    margin: 10px auto 20px;
+    padding: 7px 12px;
+    list-style: none;
+    border: 3px solid black;
     border-radius: 40px;
-    background: var(--cream);
-    box-shadow: 3px 4px 0 var(--black);
+    background-color: #f5f3ec;
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: 12px center;
+    box-shadow: 4px 4px 0 black;
 }
 
 .modern-brand {
