@@ -1137,230 +1137,51 @@ body {
 }
 
 
-/* =================================
-   LOGO DOMPET - MONEY ORBIT
-================================= */
+/* LOGO DOMPET */
 
 .visual-wallet {
-    position: relative;
-    width: 210px;
-    height: 210px;
-
     display: flex;
     align-items: center;
     justify-content: center;
+
+    width: 180px;
+    height: 180px;
 
     align-self: center;
-    isolation: isolate;
 
-    animation: walletFloat 4s ease-in-out infinite;
-}
-
-/* BINGKAI LOGO */
-
-.logo-frame {
-    position: relative;
-    z-index: 3;
-
-    width: 145px;
-    height: 145px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 9px;
-
-    border-radius: 38% 62% 55% 45% / 45% 42% 58% 55%;
-
-    background: linear-gradient(
-        145deg,
-        #ffffff,
-        #e5f7ed,
-        #b9e7d0
-    );
-
-    border: 2px solid rgba(255,255,255,0.9);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,0.18),
-        inset 0 3px 10px rgba(255,255,255,0.9),
-        0 0 25px rgba(65,190,135,0.25);
-
-    animation: frameMorph 7s ease-in-out infinite;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
 }
 
 /* GAMBAR LOGO */
 
 .hero-logo {
     display: block;
+
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
+    border-radius: 15px;
 
-    border-radius: 30% 70% 45% 55% / 50% 35% 65% 50%;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.2));
 
-    filter: drop-shadow(0 5px 8px rgba(0,0,0,0.2));
-
+    animation: logoImageFloat 3s ease-in-out infinite;
     transition: transform 0.4s ease;
 }
 
-.logo-frame:hover .hero-logo {
-    transform: scale(1.08) rotate(-5deg);
-}
+/* ANIMASI LOGO */
 
-/* CAHAYA */
-
-.logo-glow {
-    position: absolute;
-    inset: -15px;
-    z-index: -1;
-
-    border-radius: 50%;
-
-    background: rgba(65,210,145,0.25);
-    filter: blur(25px);
-
-    animation: glowPulse 3s ease-in-out infinite;
-}
-
-/* ORBIT */
-
-.money-orbit {
-    position: absolute;
-
-    border: 1.5px solid rgba(55,170,120,0.35);
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-.orbit-a {
-    width: 185px;
-    height: 185px;
-
-    border-style: dashed;
-
-    animation: orbitSpin 15s linear infinite;
-}
-
-.orbit-b {
-    width: 210px;
-    height: 155px;
-
-    border-color: rgba(255,230,0,0.65);
-
-    animation: orbitSpin 12s linear infinite reverse;
-}
-
-/* KOIN */
-
-.orbit-coin {
-    position: absolute;
-    z-index: 5;
-
-    width: 34px;
-    height: 34px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    font-weight: 900;
-    font-size: 16px;
-
-    color: #654b00;
-
-    background: linear-gradient(
-        145deg,
-        #fff49a,
-        #ffd92e,
-        #e9a900
-    );
-
-    border: 2px solid #fff3a0;
-
-    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
-
-    animation: coinFloat 3s ease-in-out infinite;
-}
-
-.coin-one {
-    top: 12px;
-    right: 13px;
-}
-
-.coin-two {
-    bottom: 20px;
-    left: 5px;
-
-    color: white;
-    background: linear-gradient(145deg, #ff5474, #df003c);
-
-    animation-delay: 0.7s;
-}
-
-.coin-three {
-    bottom: 5px;
-    right: 28px;
-
-    animation-delay: 1.3s;
-}
-
-/* ANIMASI */
-
-@keyframes walletFloat {
+@keyframes logoImageFloat {
     0%, 100% {
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 
     50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes frameMorph {
-    0%, 100% {
-        border-radius: 38% 62% 55% 45% / 45% 42% 58% 55%;
-    }
-
-    50% {
-        border-radius: 55% 45% 40% 60% / 55% 60% 40% 45%;
-    }
-}
-
-@keyframes orbitSpin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes coinFloat {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-9px) rotate(15deg);
-    }
-}
-
-@keyframes glowPulse {
-    0%, 100% {
-        opacity: 0.35;
-        transform: scale(0.9);
-    }
-
-    50% {
-        opacity: 0.8;
-        transform: scale(1.15);
+        transform: translateY(-5px) scale(1.05);
     }
 }
 
