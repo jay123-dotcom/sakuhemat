@@ -742,6 +742,174 @@ a {
 }
 
 
+/* =========================================
+   NAVBAR ABOUT - MENYESUAIKAN NAVBAR HOME
+========================================= */
+
+/* BAGIAN UTAMA NAVBAR */
+.modern-header {
+    width: 100%;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 100;
+}
+
+.modern-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 800px;
+    min-height: 58px;
+
+    margin: 0 auto;
+    padding: 8px 14px;
+
+    border: 1.5px solid #222;
+    border-radius: 17px;
+
+    background: #f5f3ec;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* BRAND SAKUHEMAT */
+.modern-brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.brand-name {
+    color: #111;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.brand-name span {
+    color: crimson;
+}
+
+/* MENU NAVBAR */
+#sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 9px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+#sidebar li {
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* TOMBOL MENU */
+#sidebar .top-link,
+#sidebar .logout-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 29px;
+    padding: 5px 12px;
+
+    border: 1.5px solid #111;
+    border-radius: 10px;
+
+    background: #FFE600;
+    color: #111;
+
+    font-size: 9px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: all 0.25s ease;
+}
+
+/* HOVER */
+#sidebar .top-link:hover,
+#sidebar .logout-link:hover {
+    transform: translateY(-3px);
+    background: crimson;
+    color: white;
+
+    box-shadow: 0 5px 0 rgba(0,0,0,0.2);
+}
+
+/* MENU AKTIF */
+#sidebar .top-link.active {
+    background: crimson;
+    color: white;
+}
+
+/* PEMBATAS */
+#sidebar .divider {
+    width: 1px;
+    height: 24px;
+    margin: 0 3px;
+    background: #c5c2c2;
+    list-style: none;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 600px) {
+    .modern-header {
+        padding: 10px;
+    }
+
+    .modern-navbar {
+        padding: 8px;
+        gap: 6px;
+    }
+
+    #sidebar {
+        gap: 5px;
+    }
+
+    #sidebar .top-link,
+    #sidebar .logout-link {
+        padding: 5px 7px;
+        font-size: 8px;
+    }
+
+    .brand-name {
+        font-size: 11px;
+    }
+
+    .brand-logo img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+
+
 
 
 
