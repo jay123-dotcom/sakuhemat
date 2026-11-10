@@ -2142,6 +2142,18 @@ body {
     }
 }
 
+/* HAPUS ORBIT DI BELAKANG LOGO */
+.visual-card .visual-wallet::before {
+    content: none !important;
+    display: none !important;
+    animation: none !important;
+}
+
+/* HAPUS ORBIT DEKORATIF DI SEKITAR KARTU */
+.visual-card .visual-orbit {
+    display: none !important;
+}
+
 
 
 
