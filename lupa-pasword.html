@@ -1,113 +1,123 @@
+
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f3ec">
 
-    <title>Lupa Password - SakuHemat</title>
+    <title>Lupa Password | SakuHemat</title>
 
-    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="lupa-password.css?v=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="auth-container">
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
 
-        <div class="logo">
-            🔐
-        </div>
+    <main class="reset-wrapper">
 
-        <h1>SAKUHEMAT</h1>
+        <section class="reset-card">
 
-        <p class="subtitle">
-            Atur kembali password akunmu.
-        </p>
+            <a href="login.html" class="back-link">
+                ← Kembali ke Login
+            </a>
 
+            <div class="reset-brand">
+                <div class="brand-icon">S</div>
+                <span>SAKU<span>HEMAT.</span></span>
+            </div>
 
-        <div class="auth-box">
+            <div class="reset-illustration">
+                <div class="illustration-circle">
+                    <span class="lock-icon">🔐</span>
+                </div>
+                <span class="spark spark-one">✦</span>
+                <span class="spark spark-two">✧</span>
+                <span class="spark spark-three">✦</span>
+            </div>
 
-            <h2>LUPA PASSWORD</h2>
+            <div class="reset-heading">
+                <span class="eyebrow">ACCOUNT RECOVERY</span>
 
+                <h1>LUPA<br><span>PASSWORD?</span></h1>
 
-            <label for="email">
-                Email Akun
-            </label>
+                <p>
+                    Tenang, kamu bisa membuat password baru
+                    untuk kembali mengakses akun SakuHemat.
+                </p>
+            </div>
 
-            <input
-                type="email"
-                id="email"
-                placeholder="Masukkan email akun"
-            >
+            <div class="reset-form">
 
+                <label for="email">EMAIL AKUN</label>
 
-            <label for="passwordBaru">
-                Password Baru
-            </label>
+                <div class="input-box">
+                    <span>✉</span>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Masukkan email akun"
+                        autocomplete="email"
+                    >
+                </div>
 
-            <input
-                type="password"
-                id="passwordBaru"
-                placeholder="Buat password baru"
-            >
+                <label for="passwordBaru">PASSWORD BARU</label>
 
+                <div class="input-box">
+                    <span>🔑</span>
+                    <input
+                        type="password"
+                        id="passwordBaru"
+                        placeholder="Buat password baru"
+                        autocomplete="new-password"
+                    >
+                </div>
 
-            <div class="peringatan">
+                <p class="reset-note">
+                    ⚠️ Pastikan email sesuai dengan akun yang terdaftar.
+                </p>
 
-                ⚠️ Masukkan email yang digunakan saat
-                membuat akun SakuHemat.
+                <button type="button" id="tombolReset">
+                    RESET PASSWORD
+                    <span>↗</span>
+                </button>
 
             </div>
 
+            <div class="reset-footer">
+                SMART SAVING • BETTER FUTURE
+            </div>
 
-            <button id="tombolReset">
-                RESET PASSWORD
-            </button>
+        </section>
 
-
-            <p class="switch-page">
-
-                Ingat password?
-
-                <a href="login.html">
-                    Kembali ke Login
-                </a>
-
-            </p>
-
-        </div>
-
-    </div>
-
+    </main>
 
     <!-- POPUP -->
+    <div class="popup-overlay" id="popupOverlay">
 
-    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-card">
 
-        <div class="popup">
+            <div class="popup-icon" id="popupIcon">✅</div>
 
-            <div id="popupIcon" class="popup-icon">
-                ⚠️
-            </div>
-
-            <h2 id="popupTitle">
-                Peringatan
-            </h2>
+            <h2 id="popupTitle">Berhasil!</h2>
 
             <p id="popupMessage">
-                Pesan
+                Password berhasil diperbarui.
             </p>
 
-            <button id="popupButton">
-                OKE
+            <button type="button" id="popupButton">
+                MENGERTI
             </button>
 
         </div>
 
     </div>
 
+    <script src="auth.js?v=5"></script>
 
-    <script src="auth.js"></script>
 </body>
-
 </html>
