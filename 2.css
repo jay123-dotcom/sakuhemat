@@ -1037,22 +1037,17 @@ body {
 /* LOGO DOMPET */
 
 .hero-logo {
-    position: relative;
-    z-index: 2;
-
     display: block;
-
-    width: 112px;
-    height: 112px;
+    width: 150px;
+    height: 150px;
 
     object-fit: contain;
+    border-radius: 0;
 
-    border-radius: 18px;
-
-    filter:
-        drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
 
     animation: logoImageFloat 3s ease-in-out infinite;
+    transition: transform 0.4s ease;
 }
 
 /* ANIMASI BINGKAI */
