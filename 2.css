@@ -1997,34 +1997,172 @@ body {
     }
 }
 
-/* FIX UKURAN LOGO SAKUHEMAT */
+/* =========================================
+   LOGO SAKUHEMAT - ORBIT & MONEY DETAILS
+   Mengganti override logo lama tanpa mengubah
+   styling halaman lain.
+========================================= */
 
 .visual-card .visual-wallet {
     position: relative;
-    width: 125px !important;
-    height: 125px !important;
-    min-width: 125px;
-    max-width: 125px;
-    flex: 0 0 125px;
-    margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
+    isolation: isolate;
 
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 148px !important;
+    height: 148px !important;
+    min-width: 148px;
+    max-width: 148px;
+    flex: 0 0 148px;
+
+    margin: 0 auto;
+    padding: 10px;
+    overflow: visible;
+
+    border: 1px solid rgba(0, 120, 85, 0.22);
+    border-radius: 36px 25px 36px 25px;
+
+    background:
+        radial-gradient(circle at 25% 20%, rgba(255,255,255,0.95), transparent 42%),
+        linear-gradient(145deg, #e7fff2, #bcebd5 55%, #d8f7ee);
+
+    box-shadow:
+        0 16px 32px rgba(20, 80, 55, 0.18),
+        inset 0 2px 8px rgba(255,255,255,0.9);
+
+    animation: walletFrameFloat 4.5s ease-in-out infinite;
 }
 
+/* Garis orbit putus-putus di belakang logo */
+.visual-card .visual-wallet::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -13px;
+
+    border: 2px dashed rgba(0, 135, 95, 0.55);
+    border-radius: 50%;
+
+    animation: moneyOrbit 14s linear infinite;
+    pointer-events: none;
+}
+
+/* Koin kecil sebagai ornamen */
+.visual-card .visual-wallet::after {
+    content: "$";
+    position: absolute;
+    z-index: 4;
+    right: -12px;
+    bottom: 1px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 37px;
+    height: 37px;
+
+    border: 2px solid #111;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #fff27a, #ffd000);
+    color: #24513d;
+
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 19px;
+
+    box-shadow: 0 5px 0 rgba(0,0,0,0.15), 0 8px 18px rgba(0,0,0,0.16);
+
+    animation: coinBob 2.8s ease-in-out infinite;
+}
+
+/* Logo asli tetap dipakai, hanya diberi bentuk dan frame */
 .visual-card .visual-wallet .hero-logo {
-    position: static !important;
+    position: relative !important;
+    z-index: 2;
+
     display: block;
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 125px;
-    max-height: 125px;
-    object-fit: contain;
-    border-radius: 0;
+    width: 116px !important;
+    height: 116px !important;
+    max-width: 116px;
+    max-height: 116px;
+
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.9);
+    border-radius: 25px;
+
+    background: #70c9a2;
+    box-shadow:
+        0 8px 18px rgba(20, 70, 48, 0.22),
+        0 0 0 1px rgba(0, 90, 60, 0.16);
+
+    animation: logoImageFloat 3.5s ease-in-out infinite;
+}
+
+/* Gerakan bingkai dan koin */
+@keyframes walletFrameFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+    50% {
+        transform: translateY(-7px) rotate(2deg);
+    }
+}
+
+@keyframes moneyOrbit {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes coinBob {
+    0%, 100% {
+        transform: translateY(0) rotate(8deg);
+    }
+    50% {
+        transform: translateY(-7px) rotate(-8deg);
+    }
+}
+
+/* Ukuran tetap proporsional di HP */
+@media (max-width: 600px) {
+    .visual-card .visual-wallet {
+        width: 112px !important;
+        height: 112px !important;
+        min-width: 112px;
+        max-width: 112px;
+        flex-basis: 112px;
+        padding: 7px;
+        border-radius: 27px 19px 27px 19px;
+    }
+
+    .visual-card .visual-wallet .hero-logo {
+        width: 88px !important;
+        height: 88px !important;
+        max-width: 88px;
+        max-height: 88px;
+        border-radius: 19px;
+    }
+
+    .visual-card .visual-wallet::after {
+        right: -9px;
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .visual-card .visual-wallet,
+    .visual-card .visual-wallet::before,
+    .visual-card .visual-wallet::after,
+    .visual-card .visual-wallet .hero-logo {
+        animation: none !important;
+    }
 }
 
 
