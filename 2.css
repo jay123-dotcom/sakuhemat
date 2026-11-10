@@ -2035,20 +2035,6 @@ body {
     animation: walletFrameFloat 4.5s ease-in-out infinite;
 }
 
-/* Garis orbit putus-putus di belakang logo */
-.visual-card .visual-wallet::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    inset: -13px;
-
-    border: 2px dashed rgba(0, 135, 95, 0.55);
-    border-radius: 50%;
-
-    animation: moneyOrbit 14s linear infinite;
-    pointer-events: none;
-}
-
 /* Koin kecil sebagai ornamen */
 .visual-card .visual-wallet::after {
     content: "$";
