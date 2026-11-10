@@ -2165,5 +2165,10 @@ body {
     }
 }
 
+/* HILANGKAN ORBIT KECIL DI SEKITAR LOGO */
+.visual-card .visual-wallet::before {
+    display: none !important;
+}
+
 
 
