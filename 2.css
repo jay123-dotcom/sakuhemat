@@ -1136,49 +1136,203 @@ body {
     z-index: 0;
 }
 
-/* LOGO DOMPET */
+
+/* =================================
+   LOGO DOMPET - MONEY ORBIT
+================================= */
+
+.visual-wallet {
+    position: relative;
+    width: 210px;
+    height: 210px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    align-self: center;
+    isolation: isolate;
+
+    animation: walletFloat 4s ease-in-out infinite;
+}
+
+/* BINGKAI LOGO */
+
+.logo-frame {
+    position: relative;
+    z-index: 3;
+
+    width: 145px;
+    height: 145px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px;
+
+    border-radius: 38% 62% 55% 45% / 45% 42% 58% 55%;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #e5f7ed,
+        #b9e7d0
+    );
+
+    border: 2px solid rgba(255,255,255,0.9);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.18),
+        inset 0 3px 10px rgba(255,255,255,0.9),
+        0 0 25px rgba(65,190,135,0.25);
+
+    animation: frameMorph 7s ease-in-out infinite;
+}
+
+/* GAMBAR LOGO */
 
 .hero-logo {
     display: block;
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
 
-    object-fit: contain;
-    border-radius: 0;
+    object-fit: cover;
 
-    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+    border-radius: 30% 70% 45% 55% / 50% 35% 65% 50%;
 
-    animation: logoImageFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 5px 8px rgba(0,0,0,0.2));
+
     transition: transform 0.4s ease;
 }
 
-/* ANIMASI BINGKAI */
+.logo-frame:hover .hero-logo {
+    transform: scale(1.08) rotate(-5deg);
+}
 
-@keyframes logoFrameFloat {
+/* CAHAYA */
+
+.logo-glow {
+    position: absolute;
+    inset: -15px;
+    z-index: -1;
+
+    border-radius: 50%;
+
+    background: rgba(65,210,145,0.25);
+    filter: blur(25px);
+
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ORBIT */
+
+.money-orbit {
+    position: absolute;
+
+    border: 1.5px solid rgba(55,170,120,0.35);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.orbit-a {
+    width: 185px;
+    height: 185px;
+
+    border-style: dashed;
+
+    animation: orbitSpin 15s linear infinite;
+}
+
+.orbit-b {
+    width: 210px;
+    height: 155px;
+
+    border-color: rgba(255,230,0,0.65);
+
+    animation: orbitSpin 12s linear infinite reverse;
+}
+
+/* KOIN */
+
+.orbit-coin {
+    position: absolute;
+    z-index: 5;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: 900;
+    font-size: 16px;
+
+    color: #654b00;
+
+    background: linear-gradient(
+        145deg,
+        #fff49a,
+        #ffd92e,
+        #e9a900
+    );
+
+    border: 2px solid #fff3a0;
+
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+
+    animation: coinFloat 3s ease-in-out infinite;
+}
+
+.coin-one {
+    top: 12px;
+    right: 13px;
+}
+
+.coin-two {
+    bottom: 20px;
+    left: 5px;
+
+    color: white;
+    background: linear-gradient(145deg, #ff5474, #df003c);
+
+    animation-delay: 0.7s;
+}
+
+.coin-three {
+    bottom: 5px;
+    right: 28px;
+
+    animation-delay: 1.3s;
+}
+
+/* ANIMASI */
+
+@keyframes walletFloat {
     0%, 100% {
-        transform: translateY(0) rotate(-3deg);
+        transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-9px) rotate(3deg);
+        transform: translateY(-10px);
     }
 }
 
-/* ANIMASI LOGO */
-
-@keyframes logoImageFloat {
+@keyframes frameMorph {
     0%, 100% {
-        transform: translateY(0) scale(1);
+        border-radius: 38% 62% 55% 45% / 45% 42% 58% 55%;
     }
 
     50% {
-        transform: translateY(-5px) scale(1.05);
+        border-radius: 55% 45% 40% 60% / 55% 60% 40% 45%;
     }
 }
 
-/* ANIMASI ORBIT */
-
-@keyframes logoOrbit {
+@keyframes orbitSpin {
     from {
         transform: rotate(0deg);
     }
@@ -1188,82 +1342,26 @@ body {
     }
 }
 
-.visual-caption {
-    color: var(--modern-white);
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 19px;
-    line-height: 1.5;
-    letter-spacing: 1px;
+@keyframes coinFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-9px) rotate(15deg);
+    }
 }
 
-.visual-card-bottom {
-    color: #89b8a0;
-    font-size: 9px;
-}
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.35;
+        transform: scale(0.9);
+    }
 
-
-/* LINGKARAN ORBIT */
-
-.visual-orbit {
-    position: absolute;
-
-    width: 95%;
-    height: 95%;
-
-    border: 1px solid rgba(112,224,177,0.13);
-    border-radius: 50%;
-}
-
-.orbit-one {
-    transform: rotate(25deg) scaleY(0.7);
-}
-
-.orbit-two {
-    transform: rotate(-25deg) scaleY(0.7);
-}
-
-
-/* GELEMBUNG */
-
-.floating-bubble {
-    position: absolute;
-    z-index: 4;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 45px;
-    height: 45px;
-
-    border: 1px solid rgba(112,224,177,0.25);
-    border-radius: 15px;
-
-    background: #1d382b;
-    color: var(--modern-mint);
-
-    font-size: 20px;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-
-    animation: bubbleFloat 4s ease-in-out infinite;
-}
-
-.bubble-one {
-    top: 13%;
-    right: 4%;
-}
-
-.bubble-two {
-    bottom: 17%;
-    left: 3%;
-    animation-delay: 1s;
-}
-
-.bubble-three {
-    top: 47%;
-    right: -3%;
-    animation-delay: 2s;
+    50% {
+        opacity: 0.8;
+        transform: scale(1.15);
+    }
 }
 
 
