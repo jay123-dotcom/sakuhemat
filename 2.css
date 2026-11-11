@@ -2166,6 +2166,30 @@ body {
     display: none !important;
 }
 
+/* SVG ARROW ICON */
+.arrow-icon {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #00D1FF;
+    color: #ffffff;
+    border: 2px solid #111111;
+    border-radius: 12px;
+    box-shadow: 0 4px 0 #111111;
+    transition: transform 0.3s ease;
+}
+
+.arrow-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.hero-button:hover .arrow-icon {
+    transform: translateX(5px) scale(1.08);
+}
 
 
 
