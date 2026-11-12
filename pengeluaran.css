@@ -507,3 +507,29 @@ select option {
         font-size: 18px;
     }
 }
+
+.arrow-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+    color: #111;
+    transition: transform 0.3s ease;
+}
+
+.arrow-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.nav-link:hover .arrow-icon {
+    transform: translate(3px, -3px);
+}
+
+.nav-link[href="pengeluaran.html"] .arrow-icon svg {
+    transform: rotate(45deg);
+}
+
+.nav-link[href="pengeluaran.html"]:hover .arrow-icon {
+    transform: translate(3px, 3px);
+}
