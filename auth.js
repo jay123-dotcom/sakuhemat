@@ -158,26 +158,23 @@ if (akunLama) {
         };
 
         // SIMPAN AKUN
-        localStorage.setItem(
-            "akunSakuHemat",
-            JSON.stringify(akunBaru)
-        );
+daftarAkun.push(akunBaru);
 
-        // RESET PERCOBAAN
-        localStorage.removeItem("percobaanLogin");
+localStorage.setItem(
+    "akunSakuHemat",
+    JSON.stringify(daftarAkun)
+);
 
-        // BERHASIL
-        tampilkanPopup(
-            "Akun Berhasil Dibuat!",
-            "Akun kamu berhasil dibuat. Jangan lupa email dan password kamu!",
-            "✅",
-            "login.html"
-        );
+// RESET PERCOBAAN
+localStorage.removeItem("percobaanLogin");
 
-    });
-
-}
-
+// BERHASIL
+tampilkanPopup(
+    "Akun Berhasil Dibuat!",
+    "Akun kamu berhasil dibuat. Jangan lupa email dan password kamu!",
+    "✅",
+    "login.html"
+);
 
 // ==========================================
 // LOGIN
