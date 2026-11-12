@@ -1,22 +1,37 @@
+
 // ==========================================
-// CEK AUTO LOGIN
+// SISTEM PROTEKSI HALAMAN SAKUHEMAT
 // ==========================================
 
-const statusLogin =
-    localStorage.getItem("statusLogin");
+// Gunakan key baru agar status login lama
+// tidak otomatis memberikan akses.
+const statusLogin = localStorage.getItem("statusLoginV2");
 
+// Ambil nama halaman yang sedang dibuka.
+const halamanSekarang = window.location.pathname
+    .split("/")
+    .pop()
+    .toLowerCase();
+
+// Halaman yang boleh dibuka tanpa login.
+const halamanPublik = [
+    "",
+    "index.html",
+    "login.html",
+    "daftar.html",
+    "lupa-password.html",
+    "lupa-pasword.html"
+];
+
+// Jika halaman bukan halaman publik dan
+// pengguna belum login, arahkan ke Login.
 if (
-    statusLogin === "true" &&
-    (
-        window.location.pathname.includes("login.html") ||
-        window.location.pathname.includes("daftar.html") ||
-        window.location.pathname.includes("lupa-password.html")
-    )
+    !halamanPublik.includes(halamanSekarang) &&
+    statusLogin !== "true"
 ) {
-
-    window.location.href = "1.html";
-
+    window.location.replace("login.html");
 }
+
 
 
 // ==========================================
