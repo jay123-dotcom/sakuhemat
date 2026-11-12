@@ -2166,19 +2166,19 @@ body {
     display: none !important;
 }
 
-/* SVG ARROW ICON */
+/* ARROW ICON - TANPA BACKGROUND */
 .arrow-icon {
-    width: 42px;
-    height: 42px;
+    width: 24px;
+    height: 24px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    background: #00D1FF;
-    color: #ffffff;
-    border: 2px solid #111111;
-    border-radius: 12px;
-    box-shadow: 0 4px 0 #111111;
+    background: transparent;
+    color: #111111;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
     transition: transform 0.3s ease;
 }
 
@@ -2188,7 +2188,7 @@ body {
 }
 
 .hero-button:hover .arrow-icon {
-    transform: translateX(5px) scale(1.08);
+    transform: translateX(5px);
 }
 
 
