@@ -341,9 +341,9 @@ if (tombolLogin) {
             // LOGIN BERHASIL
             // ==================================
 
-            localStorage.setItem(
-                "statusLogin",
-                "true"
+           localStorage.setItem(
+            "statusLoginV2",
+            "true"
             );
 
 
