@@ -470,13 +470,17 @@ localStorage.setItem(
 localStorage.removeItem("percobaanLogin");
 
 
-// BERHASIL
 tampilkanPopup(
     "Password Berhasil Diubah!",
     "Password baru kamu sudah tersimpan. Silakan login kembali.",
     "✅",
     "login.html"
 );
+
+        }
+    );
+
+}
 
 
 
