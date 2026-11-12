@@ -134,20 +134,22 @@ if (tombolDaftar) {
             return;
         }
 
-        // CEK AKUN LAMA
-        const akunLama = JSON.parse(
-            localStorage.getItem("akunSakuHemat")
-        );
+       // CEK EMAIL YANG SUDAH TERDAFTAR
+const daftarAkun = ambilDaftarAkun();
 
-        if (akunLama) {
-            tampilkanPopup(
-                "Akun Sudah Ada!",
-                "Sudah ada akun SakuHemat yang tersimpan. Silakan login menggunakan akun tersebut.",
-                "⚠️",
-                "login.html"
-            );
-            return;
-        }
+const akunLama = daftarAkun.find(
+    akun => akun.email === email
+);
+
+if (akunLama) {
+    tampilkanPopup(
+        "Email Sudah Terdaftar!",
+        "Email ini sudah digunakan. Silakan gunakan email lain.",
+        "⚠️"
+    );
+
+    return;
+}
 
         // BUAT AKUN
         const akunBaru = {
