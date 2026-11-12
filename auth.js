@@ -506,7 +506,7 @@ if (tombolLogout) {
 
         if (yakin) {
 
-            localStorage.removeItem("statusLogin");
+            localStorage.removeItem("statusLoginV2");
 
             window.location.href = "login.html";
 
