@@ -415,81 +415,69 @@ if (tombolReset) {
             }
 
 
-            // ==============================
-            // AMBIL AKUN
-            // ==============================
+           
+// ==============================
+// AMBIL DAFTAR AKUN
+// ==============================
 
-            const akun =
-                JSON.parse(
-                    localStorage.getItem(
-                        "akunSakuHemat"
-                    )
-                );
+const daftarAkun = ambilDaftarAkun();
 
 
-            if (!akun) {
+// ==============================
+// CARI AKUN BERDASARKAN EMAIL
+// ==============================
 
-                tampilkanPopup(
-                    "Akun Tidak Ditemukan!",
-                    "Belum ada akun SakuHemat yang terdaftar.",
-                    "❌",
-                    "daftar.html"
-                );
-
-                return;
-            }
+const indexAkun = daftarAkun.findIndex(
+    akun => akun.email === email
+);
 
 
-            // ==============================
-            // CEK EMAIL
-            // ==============================
+// ==============================
+// CEK EMAIL
+// ==============================
 
-            if (email !== akun.email) {
+if (indexAkun === -1) {
 
-                tampilkanPopup(
-                    "Email Tidak Terdaftar!",
-                    "Email tersebut tidak cocok dengan akun SakuHemat.",
-                    "❌"
-                );
-
-                return;
-            }
-
-
-            // ==============================
-            // GANTI PASSWORD
-            // ==============================
-
-            akun.password =
-                passwordBaru;
-
-
-            localStorage.setItem(
-                "akunSakuHemat",
-                JSON.stringify(akun)
-            );
-
-
-            // Reset percobaan
-            localStorage.removeItem(
-                "percobaanLogin"
-            );
-
-
-            tampilkanPopup(
-                "Password Berhasil Diubah!",
-                "Password baru kamu sudah tersimpan. Silakan login kembali.",
-                "✅",
-                "login.html"
-            );
-
-        }
+    tampilkanPopup(
+        "Akun Tidak Ditemukan!",
+        "Email tersebut belum terdaftar di SakuHemat.",
+        "❌",
+        "daftar.html"
     );
 
+    return;
 }
-            });
 
-}
+
+// ==============================
+// GANTI PASSWORD
+// ==============================
+
+daftarAkun[indexAkun].password = passwordBaru;
+
+
+// ==============================
+// SIMPAN SEMUA AKUN
+// ==============================
+
+localStorage.setItem(
+    "akunSakuHemat",
+    JSON.stringify(daftarAkun)
+);
+
+
+// RESET PERCOBAAN
+localStorage.removeItem("percobaanLogin");
+
+
+// BERHASIL
+tampilkanPopup(
+    "Password Berhasil Diubah!",
+    "Password baru kamu sudah tersimpan. Silakan login kembali.",
+    "✅",
+    "login.html"
+);
+
 
 
 /* ==========================================
